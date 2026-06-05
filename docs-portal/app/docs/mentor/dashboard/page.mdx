@@ -1,0 +1,89 @@
+# Mentor Command Centre (Dashboard)
+
+![Visual Guide](/images/mentor/mentor-command-center-dashboard.png)
+
+The Mentor Dashboard serves as the command center for academic operations. It compiles telemetry charts, SLA status metrics, scheduling options, and shortcuts to crucial mentor systems.
+
+## How to Access
+
+- Accessible by default upon successful login.
+- Or via the top item in the sidebar labeled **Dashboard** at path `/mentor`.
+
+## Interface Overview
+
+| Element | Description |
+|---------|-------------|
+| **System Status Badge** | Header label showing "SYSTEM OPERATIONAL" in a glowing violet bubble |
+| **Global Actions** | Quick Meeting / End Meeting, Schedule, and Reports buttons |
+| **Analytical Cards** | Four widgets: Assigned Students, Active Courses, Pending Assignments, Weekly Messages |
+| **SLA Response Monitor** | Feedback latency hours, graded assignments, and QA health badges |
+| **Charts Section** | Student Engagement Area Chart and Tasks Status Pie Chart |
+| **AI Assistant Card** | Shortcut to launch the AI Co-Pilot |
+| **Recent Activity Feed** | Timeline of recent chats, submissions, and task updates |
+| **Schedule Manager** | List of upcoming Jitsi sessions with Edit, Cancel, and Join buttons |
+
+## Analytical Cards
+
+| Card | Description |
+|------|-------------|
+| **Assigned Students** | Total number of students under your mentorship |
+| **Active Courses** | Courses currently assigned to you |
+| **Pending Assignments** | Assignments awaiting your review and grading |
+| **Weekly Message Volume** | Number of student chat messages received this week |
+
+## Available Operations
+
+### Starting an Instant Meeting
+
+**Step 1** " Click the **Quick Meeting** button in the Global Actions area.
+
+**Step 2** " A Jitsi room is created instantly and opens in a new tab.
+
+**Step 3** " Share the room link with your students.
+
+**Step 4** " When finished, click **End Meeting** to release resources.
+
+### Scheduling a Future Class
+
+**Step 1** " Click the **Schedule** button.
+
+**Step 2** " Fill in the Schedule Modal:
+  - **Course** " select the relevant course
+  - **Title** " class title
+  - **Description** " optional agenda
+  - **Scheduled At** " future date and time
+  - **Duration** " duration in minutes
+
+**Step 3** " Click **Schedule Meeting** to save.
+
+**Step 4** " The session appears in the **Schedule Manager** list.
+
+### Downloading Reports
+
+**Step 1** " Click the **Reports** button.
+
+**Step 2** " The system compiles and downloads a CSV telemetry report of the platform's database registry relevant to your account.
+
+## SLA Response Monitor
+
+The SLA Monitor tracks your compliance with the **48-hour feedback SLA**:
+
+| Metric | Description |
+|--------|-------------|
+| **Feedback Latency** | Average hours to respond to student doubts |
+| **Graded Assignments** | Count of assignments reviewed this week |
+| **QA Status** | 🟢 Healthy (within SLA) or 🟡 Warning (approaching breach) |
+
+<Warning title="SLA Threshold">
+The internal feedback target is hardcoded to **48 hours**. If you have open student doubts or ungraded assignments older than 48 hours, the SLA Monitor will display a Warning badge.
+</Warning>
+
+## Validation Rules
+
+| Field | Requirement |
+|-------|-------------|
+| **Schedule Modal " Course** | Must be a valid assigned course |
+| **Schedule Modal " Title** | Required, cannot be empty |
+| **Schedule Modal " Scheduled At** | Must be a future date/time |
+| **Schedule Modal " Duration** | Must be a positive integer (minutes) |
+

@@ -1,0 +1,80 @@
+# Certificates
+
+![Visual Guide](/images/admin/certificates.png)
+
+The Certificate Issuer console allows administrators to generate official course completion certificates for students as PDF documents.
+
+## How to Access
+
+- Select **'Certification'** under the **ACADEMICS** group in the left sidebar.
+
+## UI Elements
+
+| Element | Description |
+|---------|-------------|
+| **Credential Issuer Form** | Form with student and course details for certificate generation |
+| **Generate Button** | Creates the PDF layout and triggers browser download |
+| **Error Banner** | Validation warning that lists field issues |
+
+## Certificate Form Fields
+
+| Field | Description | Notes |
+|-------|-------------|-------|
+| **Student Name** | Recipient's full name | Auto-capitalizes the entry |
+| **Course Title** | Name of the completed course | |
+| **Duration** | Course duration (default: 03 MONTHS) | |
+| **Certificate ID** | Unique alphanumeric identifier | Must be unique " document this carefully |
+| **Start Date** | Course enrollment start date | |
+| **End Date** | Course completion date | |
+
+## Generating a Certificate
+
+**Step 1** " Navigate to **Certification** from the ACADEMICS sidebar group.
+
+**Step 2** " Enter the recipient's **full name** (the field will automatically capitalize the entry).
+
+**Step 3** " Enter the **Course Title** and **Duration** (e.g., "03 MONTHS").
+
+**Step 4** " Provide a **unique alphanumeric Certificate ID** (e.g., `SS-2026-001234`).
+
+**Step 5** " Choose the course enrollment **Start Date** and **End Date** using the date pickers.
+
+**Step 6** " Click **'Generate & Download Certificate'** to download the PDF document.
+
+<Warning title="Certificate ID Must Be Unique">
+Ensure the Certificate ID is **unique** and documented in the student's portfolio to prevent verification conflicts. Duplicate IDs will cause issues when students try to verify their certificates at learn.simplesphere.in/certificates.
+</Warning>
+
+## Certificate PDF Contents
+
+The generated PDF includes:
+- Student's full name (properly capitalized)
+- Course title and duration
+- Unique Certificate ID
+- Start and completion dates
+- Official SimpleSphere Learning branding
+- Authorization signature
+
+## Certificate Verification
+
+Students can verify their certificates at:
+```
+https://learn.simplesphere.in/certificates
+```
+
+The verification portal accepts the Certificate ID and confirms authenticity.
+
+## Validation Rules
+
+| Rule | Requirement |
+|------|-------------|
+| Student Name | Cannot be empty |
+| Course Title | Cannot be empty |
+| Certificate ID | Must be unique, alphanumeric |
+| Start Date | Must be before End Date |
+| Duration | Must be specified |
+
+<Info title="Auto-capitalization">
+The Student Name field automatically capitalizes input (e.g., "john doe" becomes "JOHN DOE" on the certificate). Review the preview before downloading to ensure correct formatting.
+</Info>
+

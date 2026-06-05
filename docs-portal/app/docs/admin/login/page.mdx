@@ -1,0 +1,55 @@
+# Admin Login
+
+![Visual Guide](/images/admin/login.png)
+
+The Login page is the secure entry point for administrators to access the SimpleSphere Admin Panel.
+
+## How to Access
+
+Open your web browser and navigate to the admin portal URL provided by your institution:
+
+```
+https://lms.simplesphere.in/login
+```
+
+## Login Steps
+
+**Step 1** " Open the login page in your web browser.
+
+**Step 2** " Enter your assigned **Username** in the first input field.
+
+**Step 3** " Type your **Password** in the second field. Click the eye icon to verify spelling.
+
+**Step 4** " _(Optional)_ Check **'Stay logged in'** to persist your admin session.
+
+**Step 5** " Click the **'Sign In'** button. The system will process your credentials and redirect you to the **Admin Dashboard**.
+
+## Login Page UI Elements
+
+| Element | Description |
+|---------|-------------|
+| **Username Field** | Box to enter your registered administrative username |
+| **Password Field** | Password input with show/hide eye icon toggle |
+| **Stay Logged In Checkbox** | Persists session across browser restarts |
+| **Sign In Button** | Primary authentication action button |
+| **Forgot Password? Link** | Opens the credential recovery flow |
+| **Role-Based Redirect System** | Automatically routes to `/admin` based on credentials |
+
+## Role-Based Redirect
+
+SimpleSphere automatically detects your role and redirects accordingly:
+
+| Role | Redirect |
+|------|---------|
+| Admin | `/admin` dashboard |
+| Mentor | `/mentor` dashboard |
+| Student | `/student` dashboard |
+
+<Note title="Admin Role Configuration">
+Admin roles are **pre-configured** by your institution. If you attempt to log in using student credentials, the router will redirect you to the student portal instead of the admin dashboard. Contact IT if you have the wrong access level.
+</Note>
+
+<Warning title="Security Reminder">
+Never share admin credentials. Admin accounts have access to sensitive student data, financial records, and system configurations. Always log out after each session.
+</Warning>
+

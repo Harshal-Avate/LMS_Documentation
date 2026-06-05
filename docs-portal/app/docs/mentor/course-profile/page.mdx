@@ -1,0 +1,70 @@
+# Course Profile & Enrolee Analytics
+
+![Visual Guide](/images/mentor/course-profile-and-enrollee-analytics.png)
+
+The Course Detail page allows mentors to view enrollment figures, modify thumbnails, redirect to the syllabus builder, and add students to specific courses.
+
+## How to Access
+
+Click on any course card from the **My Courses** registry page, navigating to path `/mentor/my-courses/:id`.
+
+## Interface Overview
+
+| Element | Description |
+|---------|-------------|
+| **Back Navigation** | "Back to Courses" breadcrumb |
+| **Course Summary** | Title and Description |
+| **Action Buttons** | Edit Thumbnail, Edit Syllabus, Add Student |
+| **Banner Frame** | Renders the active course thumbnail image |
+| **Enrollee Grid** | Lists all student names, emails, and admission dates |
+| **Modals** | Add Student Modal and Update Thumbnail Modal |
+
+## Available Operations
+
+### Assigning a New Student
+
+**Step 1** " Click the **Add Student** button.
+
+**Step 2** " Type a student name or email in the searchable selector (minimum 2 characters).
+
+**Step 3** " Locate the student in the results and click the **Plus (+)** icon.
+
+**Step 4** " The student is enrolled and their card appears in the **Enrollee Grid** automatically.
+
+### Modifying the Course Thumbnail
+
+**Step 1** " Click **Edit Thumbnail**.
+
+**Step 2** " Paste a valid **HTTP/HTTPS image URL** into the input field.
+
+**Step 3** " Click **Save Thumbnail**.
+
+**Step 4** " The banner image updates immediately.
+
+### Launching the Curriculum Builder
+
+**Step 1** " Click the **Edit Syllabus** button.
+
+**Step 2** " You are redirected to the **Curriculum Builder** (`/mentor/courses/:id/content`).
+
+## Enrollee Grid
+
+The Enrollee Grid lists all students currently enrolled in this course:
+
+| Column | Description |
+|--------|-------------|
+| **Student Name** | Full name |
+| **Email** | Email address |
+| **Admission Date** | When the student was added to this course |
+
+## Validation Rules
+
+| Rule | Requirement |
+|------|-------------|
+| **Student Search** | Minimum 2 characters before querying |
+| **Thumbnail URL** | Must be a valid HTTP/HTTPS link |
+
+<Info title="Auto-refresh">
+The enrolled students list updates automatically upon adding a student " no page refresh needed.
+</Info>
+

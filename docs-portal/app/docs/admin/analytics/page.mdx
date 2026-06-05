@@ -1,0 +1,79 @@
+# Analytics & Reports
+
+![Visual Guide](/images/admin/analytics-and-reports.png)
+
+The Analytics & Reports module is an AI-powered interface that allows administrators to query the LMS database using natural language and generate instant performance reports.
+
+## How to Access
+
+- Select **'AI Insights'** under the **ACADEMICS** group in the left sidebar.
+
+## UI Elements
+
+| Element | Description |
+|---------|-------------|
+| **AI Tool Selector Cards** | Five specialized AI models for different query types |
+| **Chat Console** | Input area for queries and transcript of responses |
+| **KPI Cards** | Total queries run, feature count, engine speed indicators |
+| **Suggest Prompts** | Quick template query buttons for the active tool |
+
+## AI Tool Cards
+
+SimpleSphere provides five dedicated AI analytics models:
+
+| Tool | Use Case |
+|------|----------|
+| **Admin Assistant** | General platform queries and administrative data |
+| **Attendance Insights** | Attendance patterns, absenteeism analysis, and trends |
+| **Document Q&A** | Query uploaded documents and institutional files |
+| **Lead Intelligence** | New lead analysis and conversion tracking |
+| **Accounts Advisor** | Financial queries: fees, collections, and balance reports |
+
+## Using the AI Insights Engine
+
+**Step 1** " Select one of the AI tool cards (e.g., **'Accounts Advisor'**).
+
+**Step 2** " Click a **Suggested Query** button for a pre-built question, or type a **custom question** in the chat bar.
+
+Examples:
+```
+"How many students have paid fees this month?"
+"List all students with attendance below 75%"
+"Show me the mentor with the most SLA breaches"
+"What is the total collection for Web Dev courses?"
+```
+
+**Step 3** " Click the **'Process'** button to submit your query.
+
+**Step 4** " Review the generated text report and structured metadata in the response.
+
+<Note title="AI Data Access">
+The AI assistant retrieves real-time statistics from the Django backend, providing instant insight without manual spreadsheet generation. All data is scoped to your authorized centers.
+</Note>
+
+## Suggested Prompts
+
+Each AI tool card provides pre-built suggested prompts relevant to its specialty:
+
+| Tool | Example Prompts |
+|------|----------------|
+| **Admin Assistant** | "Total active users", "Courses published this month" |
+| **Attendance Insights** | "Students with < 75% attendance", "Today's attendance summary" |
+| **Lead Intelligence** | "New registrations this week", "Lead conversion rate" |
+| **Accounts Advisor** | "Pending fee collections", "Revenue by center" |
+| **Document Q&A** | "Summarize the uploaded report", "Find students with X qualification" |
+
+## KPI Metrics
+
+The dashboard shows platform-level metrics:
+
+| KPI | Description |
+|-----|-------------|
+| **Total Queries Run** | Number of AI queries processed |
+| **Feature Count** | Number of data models available for querying |
+| **Engine Speed** | Response time indicator for the AI engine |
+
+<Info title="Data Accuracy">
+AI responses are generated in real time from the live database. For audit-grade reports, always verify against the raw data exports or contact your system administrator.
+</Info>
+

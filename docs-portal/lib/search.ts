@@ -1,0 +1,448 @@
+import type { SearchItem } from "@/types/docs";
+
+export const searchData: SearchItem[] = [
+  // Getting Started
+  {
+    title: "Introduction",
+    description: "Welcome to SimpleSphere Learning documentation. Get started with the LMS platform.",
+    href: "/docs/getting-started/introduction",
+    section: "Getting Started",
+    keywords: ["intro", "welcome", "overview", "simplesphere", "lms"],
+  },
+  {
+    title: "Login",
+    description: "How to log in to the SimpleSphere Learning Management System.",
+    href: "/docs/getting-started/login",
+    section: "Getting Started",
+    keywords: ["login", "sign in", "credentials", "authentication", "access"],
+  },
+  {
+    title: "Dashboard Overview",
+    description: "Navigate and understand the main dashboard of SimpleSphere LMS.",
+    href: "/docs/getting-started/dashboard",
+    section: "Getting Started",
+    keywords: ["dashboard", "overview", "home", "navigation"],
+  },
+
+  // Student Guide
+  {
+    title: "Student Login",
+    description: "How students access the SimpleSphere Student Portal securely.",
+    href: "/docs/student/login",
+    section: "Student Guide",
+    keywords: ["student", "login", "sign in", "password", "google sso"],
+  },
+  {
+    title: "Student Dashboard",
+    description: "Overview of the student home page with stat cards, upcoming sessions, and quick actions.",
+    href: "/docs/student/dashboard",
+    section: "Student Guide",
+    keywords: ["dashboard", "student home", "activity", "stat cards", "sessions"],
+  },
+  {
+    title: "Announcements",
+    description: "View important messages posted by admins and mentors for students.",
+    href: "/docs/student/announcements",
+    section: "Student Guide",
+    keywords: ["announcements", "notices", "messages", "notifications"],
+  },
+  {
+    title: "My Courses",
+    description: "Access enrolled courses, explore new ones, and track learning progress.",
+    href: "/docs/student/courses",
+    section: "Student Guide",
+    keywords: ["courses", "enrolled", "explore", "learning", "resume", "progress"],
+  },
+  {
+    title: "Attendance",
+    description: "View your daily attendance records on a monthly calendar.",
+    href: "/docs/student/attendance",
+    section: "Student Guide",
+    keywords: ["attendance", "calendar", "present", "absent", "records"],
+  },
+  {
+    title: "Assessments",
+    description: "View and submit assignments and assessments assigned by mentors.",
+    href: "/docs/student/assessments",
+    section: "Student Guide",
+    keywords: ["assessments", "assignments", "submit", "tasks", "pending"],
+  },
+  {
+    title: "My Analytics",
+    description: "Detailed insights into learning progress, performance charts, and AI insights.",
+    href: "/docs/student/analytics",
+    section: "Student Guide",
+    keywords: ["analytics", "progress", "charts", "performance", "ai insights"],
+  },
+  {
+    title: "My Documents",
+    description: "Upload and manage personal academic documents securely.",
+    href: "/docs/student/documents",
+    section: "Student Guide",
+    keywords: ["documents", "upload", "files", "certificates", "marksheet"],
+  },
+  {
+    title: "Certificates",
+    description: "View and download course completion certificates you have earned.",
+    href: "/docs/student/certificates",
+    section: "Student Guide",
+    keywords: ["certificates", "completion", "download", "pdf", "course"],
+  },
+  {
+    title: "Code Arena",
+    description: "In-browser coding environment to write, run, and test code.",
+    href: "/docs/student/code-arena",
+    section: "Student Guide",
+    keywords: ["code arena", "compiler", "coding", "editor", "programming"],
+  },
+  {
+    title: "AI Study Mentor",
+    description: "AI-powered chat assistant for study help, concept explanations, and guidance.",
+    href: "/docs/student/ai-study-mentor",
+    section: "Student Guide",
+    keywords: ["ai", "study mentor", "chat assistant", "questions", "help"],
+  },
+  {
+    title: "Student Chats",
+    description: "Direct messaging between students and mentors.",
+    href: "/docs/student/chats",
+    section: "Student Guide",
+    keywords: ["chats", "messaging", "mentor", "communication"],
+  },
+  {
+    title: "Student Projects",
+    description: "View project assignments shared by mentors with details and status.",
+    href: "/docs/student/projects",
+    section: "Student Guide",
+    keywords: ["projects", "assignments", "tasks", "submissions"],
+  },
+  {
+    title: "Student Settings",
+    description: "Update personal information, change password, and configure preferences.",
+    href: "/docs/student/settings",
+    section: "Student Guide",
+    keywords: ["settings", "preferences", "profile", "password", "theme"],
+  },
+  {
+    title: "Student Logout",
+    description: "How to safely end your session in the student portal.",
+    href: "/docs/student/logout",
+    section: "Student Guide",
+    keywords: ["logout", "sign out", "session", "security"],
+  },
+
+  // Mentor Guide
+  {
+    title: "Mentor Login & Access Control",
+    description: "Secure authentication for mentors using credentials or Google SSO.",
+    href: "/docs/mentor/login",
+    section: "Mentor Guide",
+    keywords: ["mentor", "login", "access", "google", "sso", "authentication"],
+  },
+  {
+    title: "Mentor Command Centre",
+    description: "The mentor dashboard with SLA metrics, charts, and session scheduling.",
+    href: "/docs/mentor/dashboard",
+    section: "Mentor Guide",
+    keywords: ["mentor dashboard", "command centre", "sla", "sessions", "charts"],
+  },
+  {
+    title: "Student Registry & Management",
+    description: "View and manage the list of students assigned to you.",
+    href: "/docs/mentor/student-registry",
+    section: "Mentor Guide",
+    keywords: ["student registry", "students", "management", "profiles"],
+  },
+  {
+    title: "Course Management Hub",
+    description: "Browse and manage courses assigned to the logged-in mentor.",
+    href: "/docs/mentor/course-management",
+    section: "Mentor Guide",
+    keywords: ["course management", "courses", "assigned", "catalog"],
+  },
+  {
+    title: "Course Profile & Enrolee Analytics",
+    description: "View enrollment figures, modify thumbnails, and manage enrolled students.",
+    href: "/docs/mentor/course-profile",
+    section: "Mentor Guide",
+    keywords: ["course profile", "enrollees", "analytics", "thumbnail", "students"],
+  },
+  {
+    title: "Curriculum Builder & Syllabus Editor",
+    description: "Design, order and edit course modules, lectures, quizzes, and assignments.",
+    href: "/docs/mentor/curriculum-builder",
+    section: "Mentor Guide",
+    keywords: ["curriculum", "syllabus", "modules", "lectures", "quizzes", "builder"],
+  },
+  {
+    title: "Enrolled Course Student Progress Tracker",
+    description: "Track academic analytics for students enrolled in a selected course.",
+    href: "/docs/mentor/student-progress",
+    section: "Mentor Guide",
+    keywords: ["student progress", "tracker", "analytics", "completion", "quiz scores"],
+  },
+  {
+    title: "Admin Tasks & Progression Board (Kanban)",
+    description: "Drag-and-drop Kanban board to track operational duties assigned by admins.",
+    href: "/docs/mentor/kanban-tasks",
+    section: "Mentor Guide",
+    keywords: ["kanban", "tasks", "to do", "in progress", "done", "drag drop"],
+  },
+  {
+    title: "Custom Assignment & Assessment Creation",
+    description: "Assign homework and assessments to students with due dates.",
+    href: "/docs/mentor/assignments",
+    section: "Mentor Guide",
+    keywords: ["assignments", "assessments", "create", "homework", "due date"],
+  },
+  {
+    title: "Assignment Submissions & Grading Ledger",
+    description: "Review student submissions, leave feedback, and update grading status.",
+    href: "/docs/mentor/grading-ledger",
+    section: "Mentor Guide",
+    keywords: ["grading", "submissions", "feedback", "review", "ledger"],
+  },
+  {
+    title: "Classroom Attendance Matrix",
+    description: "Track student attendance with progress bars and monthly calendar view.",
+    href: "/docs/mentor/attendance",
+    section: "Mentor Guide",
+    keywords: ["attendance", "classroom", "calendar", "present", "absent", "matrix"],
+  },
+  {
+    title: "Technical Session Logging & SLA Registry",
+    description: "Document session notes, summaries, and blockers with SLA tracking.",
+    href: "/docs/mentor/session-logging",
+    section: "Mentor Guide",
+    keywords: ["session logging", "sla", "notes", "technical", "registry"],
+  },
+  {
+    title: "Project Portfolio Dashboard",
+    description: "Create and manage student projects, assign teams, and monitor milestones.",
+    href: "/docs/mentor/project-portfolio",
+    section: "Mentor Guide",
+    keywords: ["projects", "portfolio", "dashboard", "milestones", "teams"],
+  },
+  {
+    title: "Project Architecture & Milestone Planner",
+    description: "Manage milestones and tasks for specific student projects.",
+    href: "/docs/mentor/project-milestone",
+    section: "Mentor Guide",
+    keywords: ["milestones", "planner", "project tasks", "architecture"],
+  },
+  {
+    title: "Doubt Resolution Forum & SLA Manager",
+    description: "Manage student inquiries, track SLA deadlines, and resolve doubts.",
+    href: "/docs/mentor/doubt-resolution",
+    section: "Mentor Guide",
+    keywords: ["doubts", "forum", "sla", "resolve", "questions", "escalate"],
+  },
+  {
+    title: "AI Co-Pilot & Data Inquiry Engine",
+    description: "AI assistant for mentors to query student progress and course metrics.",
+    href: "/docs/mentor/ai-copilot",
+    section: "Mentor Guide",
+    keywords: ["ai", "copilot", "data inquiry", "query", "analytics", "insights"],
+  },
+  {
+    title: "Interactive Student Chat & File Transfer",
+    description: "Direct messaging and file sharing between mentors and students.",
+    href: "/docs/mentor/chats",
+    section: "Mentor Guide",
+    keywords: ["chats", "messaging", "file transfer", "communication", "upload"],
+  },
+  {
+    title: "Completion Certificate Issuance & Audit",
+    description: "View student certification status and download issued certificates.",
+    href: "/docs/mentor/certificates",
+    section: "Mentor Guide",
+    keywords: ["certificates", "issuance", "audit", "download", "completion"],
+  },
+  {
+    title: "Student Document Repository",
+    description: "Manage paperwork and files uploaded by students.",
+    href: "/docs/mentor/student-documents",
+    section: "Mentor Guide",
+    keywords: ["student documents", "repository", "files", "upload", "paperwork"],
+  },
+  {
+    title: "Performance Analytics & Student Retention",
+    description: "Course metrics, performance distributions, and at-risk student identification.",
+    href: "/docs/mentor/analytics",
+    section: "Mentor Guide",
+    keywords: ["analytics", "performance", "retention", "at-risk", "distribution"],
+  },
+  {
+    title: "Coding Arena & Interactive Compiler",
+    description: "Create and manage coding problems, test cases, and starter code for students.",
+    href: "/docs/mentor/code-arena",
+    section: "Mentor Guide",
+    keywords: ["code arena", "coding problems", "compiler", "test cases"],
+  },
+  {
+    title: "Portal Announcements Board",
+    description: "Create and manage announcements for the mentor portal.",
+    href: "/docs/mentor/announcements",
+    section: "Mentor Guide",
+    keywords: ["announcements", "notices", "board", "post"],
+  },
+  {
+    title: "Mentor Settings, Profile & Password",
+    description: "Update personal profile, change password, and manage security settings.",
+    href: "/docs/mentor/settings",
+    section: "Mentor Guide",
+    keywords: ["settings", "profile", "password", "security", "preferences"],
+  },
+  {
+    title: "Jitsi Live Classroom Integration",
+    description: "Schedule, start, and manage live video classroom sessions via Jitsi.",
+    href: "/docs/mentor/live-classroom",
+    section: "Mentor Guide",
+    keywords: ["jitsi", "live classroom", "video", "sessions", "meeting"],
+  },
+  {
+    title: "Quality Assurance Audit Panel",
+    description: "Monitor student engagement, SLA compliance, and quality audit metrics.",
+    href: "/docs/mentor/quality-audit",
+    section: "Mentor Guide",
+    keywords: ["quality audit", "sla compliance", "qa", "metrics", "performance"],
+  },
+  {
+    title: "In-App Notification System",
+    description: "View and manage in-app notifications for important platform events.",
+    href: "/docs/mentor/notifications",
+    section: "Mentor Guide",
+    keywords: ["notifications", "alerts", "in-app", "events"],
+  },
+  {
+    title: "Mentor Logout",
+    description: "Securely terminate your session and return to the login page.",
+    href: "/docs/mentor/logout",
+    section: "Mentor Guide",
+    keywords: ["logout", "sign out", "session terminate", "security"],
+  },
+
+  // Admin Guide
+  {
+    title: "Admin Login",
+    description: "Secure entry portal for administering the LMS platform.",
+    href: "/docs/admin/login",
+    section: "Admin Guide",
+    keywords: ["admin", "login", "sign in", "authentication", "portal"],
+  },
+  {
+    title: "Admin Dashboard",
+    description: "Central control deck with system-wide metrics and operational highlights.",
+    href: "/docs/admin/dashboard",
+    section: "Admin Guide",
+    keywords: ["admin dashboard", "overview", "metrics", "control deck"],
+  },
+  {
+    title: "User Management",
+    description: "Manage platform personnel, access privileges, and educational centers.",
+    href: "/docs/admin/user-management",
+    section: "Admin Guide",
+    keywords: ["users", "user management", "students", "mentors", "access"],
+  },
+  {
+    title: "Batch Management",
+    description: "Select courses and analyze detailed student learning metrics by batch.",
+    href: "/docs/admin/batch-management",
+    section: "Admin Guide",
+    keywords: ["batch", "courses", "students", "analytics", "enrollment"],
+  },
+  {
+    title: "Admin Course Management",
+    description: "Create, edit, structure, and assign mentors to courses.",
+    href: "/docs/admin/course-management",
+    section: "Admin Guide",
+    keywords: ["courses", "management", "create", "edit", "mentors", "assign"],
+  },
+  {
+    title: "Admin Announcements",
+    description: "Create, pin, and target administrative notices to users.",
+    href: "/docs/admin/announcements",
+    section: "Admin Guide",
+    keywords: ["announcements", "notices", "pin", "audience", "priority"],
+  },
+  {
+    title: "Assessments Management",
+    description: "Kanban board to assign tasks and track mentor deliverables.",
+    href: "/docs/admin/assessments",
+    section: "Admin Guide",
+    keywords: ["assessments", "kanban", "tasks", "mentors", "to do", "done"],
+  },
+  {
+    title: "Attendance Management",
+    description: "Track daily attendance, export logs, and adjust records.",
+    href: "/docs/admin/attendance",
+    section: "Admin Guide",
+    keywords: ["attendance", "management", "calendar", "export", "records"],
+  },
+  {
+    title: "Analytics & Reports",
+    description: "AI-powered interface for natural language query processing and LMS reports.",
+    href: "/docs/admin/analytics",
+    section: "Admin Guide",
+    keywords: ["analytics", "reports", "ai", "insights", "data", "query"],
+  },
+  {
+    title: "Admin Certificates",
+    description: "Certificate issuer console for generating course credentials.",
+    href: "/docs/admin/certificates",
+    section: "Admin Guide",
+    keywords: ["certificates", "generate", "download", "pdf", "credentials"],
+  },
+  {
+    title: "Projects Management",
+    description: "Monitor student engagement latency and quality audits.",
+    href: "/docs/admin/projects",
+    section: "Admin Guide",
+    keywords: ["projects", "quality audit", "sla", "engagement", "metrics"],
+  },
+  {
+    title: "Admin Chats / Messaging",
+    description: "Communication module to contact and check student records.",
+    href: "/docs/admin/chats",
+    section: "Admin Guide",
+    keywords: ["chats", "messaging", "students", "whatsapp", "contact"],
+  },
+  {
+    title: "Admin Settings & Preferences",
+    description: "Personal account console for security updates and clearance reviews.",
+    href: "/docs/admin/settings",
+    section: "Admin Guide",
+    keywords: ["settings", "preferences", "security", "password", "clearance"],
+  },
+  {
+    title: "Admin Logout",
+    description: "Session termination routine to secure database access.",
+    href: "/docs/admin/logout",
+    section: "Admin Guide",
+    keywords: ["logout", "sign out", "session", "security"],
+  },
+
+  // FAQ
+  {
+    title: "Frequently Asked Questions",
+    description: "Common questions and answers about the SimpleSphere LMS platform.",
+    href: "/docs/faq",
+    section: "Support",
+    keywords: ["faq", "questions", "answers", "help", "support", "common issues"],
+  },
+];
+
+export function searchDocs(query: string): SearchItem[] {
+  if (!query.trim()) return [];
+
+  const q = query.toLowerCase().trim();
+
+  return searchData.filter((item) => {
+    return (
+      item.title.toLowerCase().includes(q) ||
+      item.description.toLowerCase().includes(q) ||
+      item.section.toLowerCase().includes(q) ||
+      item.keywords?.some((kw) => kw.toLowerCase().includes(q))
+    );
+  });
+}

@@ -1,0 +1,95 @@
+# Curriculum Builder & Syllabus Editor
+
+![Visual Guide](/images/mentor/curriculum-builder-and-syllabus-editor.png)
+
+The Curriculum Builder is a workspace where mentors design, order, and edit course modules, lectures, quizzes, and assignments. Mentors can also submit course drafts to HQ for administrative review.
+
+## How to Access
+
+Navigate via the **Edit Syllabus** button from the Course Detail Page, or directly via path `/mentor/courses/:id/content`.
+
+## Interface Overview
+
+| Tab | Description |
+|-----|-------------|
+| **Basics** | Course overview, title, and description |
+| **Curriculum** | Module and content management |
+| **Additional** | Prerequisites, outcomes, and settings |
+
+## Workflow Header
+
+The header displays the **Course Status Badge**:
+
+| Status | Description |
+|--------|-------------|
+| **Draft** | Course is being created |
+| **Pending Approval** | Submitted for admin review " editing disabled |
+| **Rejected** | Admin has rejected with feedback " editing re-enabled |
+| **Published** | Live to enrolled students |
+
+## Available Operations
+
+### Creating a Module
+
+**Step 1** " In the **Curriculum Tab**, click **Create New Module**.
+
+**Step 2** " Enter the **Module Title** and **Description**.
+
+**Step 3** " Click **Save Module**.
+
+**Step 4** " The module accordion appears in the curriculum list.
+
+### Adding a Lecture
+
+**Step 1** " Expand a module accordion.
+
+**Step 2** " Click **Add Lesson**.
+
+**Step 3** " Fill in:
+  - **Title** " lecture name
+  - **Content** " text guide or notes
+  - **Video URL** " YouTube embed path
+  - **Duration** " estimated minutes
+
+**Step 4** " Click **Save Lesson**.
+
+### Adding a Quiz
+
+**Step 1** " Click **Add Quiz** inside a module.
+
+**Step 2** " Configure:
+  - **Time Limit** " minutes allowed
+  - **Pass Percentage** " minimum score (1-100%)
+
+**Step 3** " Click **Questions** to add individual questions.
+
+**Step 4** " For each question: enter **Question Text**, add options, select the **Correct Answer**, click **Save Question**.
+
+### Adding an Assignment
+
+**Step 1** " Click **Add Assignment** inside a module.
+
+**Step 2** " Enter **Title**, **Description**, **Total Points**, and **Pass Points** (must be ≤ Total Points).
+
+**Step 3** " Click **Save Assignment**.
+
+### Submitting for Admin Review
+
+**Step 1** " When all content is ready, click **Submit to HQ**.
+
+**Step 2** " The status badge changes to **Pending Approval**.
+
+**Step 3** " Content editing is disabled until the admin reviews.
+
+<Warning title="Pending Approval Lock">
+When course status is **Pending Approval**, content modification options are **disabled**. If you need to make changes, contact your admin to reject and return the course to Draft status.
+</Warning>
+
+## Validation Rules
+
+| Rule | Requirement |
+|------|-------------|
+| **Assignment Pass Points** | Must be ≤ Total Points |
+| **Quiz Pass Percentage** | Must be between 1 and 100 |
+| **Content Editing** | Disabled when status is Pending Approval |
+

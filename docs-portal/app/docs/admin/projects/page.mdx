@@ -1,0 +1,72 @@
+# Projects Management
+
+![Visual Guide](/images/admin/projects-management.png)
+
+The Projects Management dashboard monitors student engagement latency, quality audits, SLA compliance, and mentor performance across the platform.
+
+## How to Access
+
+- Select **'Quality Audit'** under the **CORE** group in the left sidebar.
+
+## UI Elements
+
+| Element | Description |
+|---------|-------------|
+| **Sync Intelligence Button** | Recalculates all quality bands, CSAT rates, and SLA compliance metrics |
+| **Retraining Alerts** | Warnings about mentors with critical SLA breaches |
+| **KPI Cards** | Network Performance, Certified Nodes, SLA Compliance, At Risk Entities |
+| **Distribution Pie Charts** | Visual quality band and dropout vector distributions |
+| **Engagement Latency Graph** | Chart showing student inactivity intervals |
+| **Audit Registry Table** | Table with CSAT ratings, SLA %, placement rates, and overall scores |
+
+## KPI Cards Overview
+
+| KPI | Description |
+|-----|-------------|
+| **Network Performance** | Overall platform health score |
+| **Certified Nodes** | Number of students/mentors who have passed quality thresholds |
+| **SLA Compliance** | Percentage of interactions within SLA target windows |
+| **At Risk Entities** | Count of students or mentors flagged for intervention |
+
+## Using the Quality Audit Dashboard
+
+**Step 1** " Review the **Retraining Alerts** banner at the top for urgent mentor issues (mentors with critical SLA breaches).
+
+**Step 2** " Check the **Entity Distribution** and **Dropout Vectors** pie charts for trends.
+
+**Step 3** " Scroll to the **Audit Registry** and search for a specific mentor or center.
+
+**Step 4** " Check the **retraining status** column:
+  - **CLEAR** " Mentor meets quality thresholds
+  - **REQUIRED** " Mentor has breached SLA or quality metrics
+
+**Step 5** " Click **'Sync Intelligence'** to refresh all calculated stats based on the latest data.
+
+## Audit Registry Table Columns
+
+| Column | Description |
+|--------|-------------|
+| **Mentor/Center Name** | Identifying information |
+| **CSAT Rating** | Customer Satisfaction score percentage |
+| **SLA Compliance %** | Percentage of interactions within SLA window |
+| **Placement Rate** | Student job placement percentage |
+| **Overall Score** | Composite quality score |
+| **Retraining Status** | CLEAR or REQUIRED |
+
+## Distribution Charts
+
+### Entity Distribution Pie Chart
+Shows the distribution of students across quality performance bands (Excellent, Good, Average, At Risk).
+
+### Student Dropout Vectors
+Visual breakdown of reasons and rates for student dropout or disengagement.
+
+### Engagement Latency Graph
+Bar or line chart showing how long students go without platform activity:
+- Students inactive for >7 days are flagged as at-risk
+- Students inactive for >14 days are escalated to admins
+
+<Note title="Sync Intelligence">
+Click **"Sync Intelligence"** to trigger a backend recalculation of all metrics based on the latest attendance and project submission data. This operation may take a few seconds to complete.
+</Note>
+

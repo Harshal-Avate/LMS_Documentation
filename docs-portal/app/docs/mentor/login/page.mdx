@@ -1,0 +1,60 @@
+# Mentor Login & Access Control
+
+![Visual Guide](/images/mentor/login-and-access-control.png)
+
+The Login Page provides secure authentication for mentors entering the SimpleSphere Learning platform. It uses cookie-based session management and integrates Google OAuth for single-sign-on verification.
+
+## How to Access
+
+Navigate to the root URL or access directly:
+
+```
+http://127.0.0.1:8000/login
+```
+
+## Interface Overview
+
+| Element | Description |
+|---------|-------------|
+| **Obsidian Dark Surface** | Double radial background gradient with premium glassmorphic theme |
+| **Username Field** | Input with User icon |
+| **Password Field** | Input with Lock icon and show/hide eye toggle |
+| **Stay Logged In** | Session persistence checkbox |
+| **Forgot Password?** | Recovery link navigating to `/forgot-password` |
+| **Sign In Button** | Purple button with hover glow effects and loading spinner |
+| **Google OAuth Button** | Pill-shaped Google Sign In button |
+| **Theme Toggle** | Top-right corner button to switch Dark/Light mode |
+| **Error Banner** | Alert for authentication failures or network errors |
+
+## Login Steps
+
+**Step 1** " Enter your assigned **username** in the Username field.
+
+**Step 2** " Enter your **password** in the Password field.
+
+**Step 3** " _(Optional)_ Toggle the **eye icon** to verify spelling.
+
+**Step 4** " Click **Sign In**. On validation success, you will be redirected to the Mentor Panel homepage (`/mentor`).
+
+**Step 5** " Alternatively, click **Sign In with Google** to complete SSO verification.
+
+## Validation Rules
+
+| Field | Rule |
+|-------|------|
+| Username | Must not be empty |
+| Password | Must not be empty |
+| Server Response | Custom error displayed if credentials are incorrect |
+
+## After Login
+
+Upon successful authentication, you are redirected to the **Mentor Command Centre** (`/mentor`). The full left sidebar with all mentor tools becomes visible.
+
+<Note title="Role-Based Access">
+Mentor accounts can only access the Mentor Panel (`/mentor`). If a mentor attempts to access the admin panel URL directly, they will be redirected based on their role. Role assignments are configured by the Administrator.
+</Note>
+
+<Info title="Password Reset">
+Click **"Forgot Password?"** to navigate to `/forgot-password`. Enter your registered email to receive a reset link. Check your spam folder if the email does not arrive within 5 minutes.
+</Info>
+

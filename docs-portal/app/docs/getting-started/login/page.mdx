@@ -1,0 +1,84 @@
+# Login
+
+The Login page is the secure entry point to the SimpleSphere platform. It serves all three user types — Students, Mentors, and Administrators.
+
+## How to Access
+
+Open your web browser and navigate to the SimpleSphere LMS URL provided by your institution:
+
+```
+https://lms.simplesphere.in/login
+```
+
+For production deployments, the URL will be your institution's assigned domain.
+
+## Login Page Features
+
+| Element | Description |
+|---------|-------------|
+| **Username Field** | Enter your registered username |
+| **Password Field** | Enter your password (with show/hide eye toggle) |
+| **Stay Logged In** | Keeps your session active across browser restarts |
+| **Sign In Button** | Submits credentials for authentication |
+| **Forgot Password?** | Opens the password recovery flow |
+| **Sign In with Google** | One-click login via Google OAuth |
+| **Theme Toggle** | Switch between light and dark mode |
+
+## Step-by-Step Login
+
+**Step 1** — Open the login page in your web browser.
+
+**Step 2** — Enter your assigned **Username** in the first input field.
+
+**Step 3** — Type your **Password** in the second field. Click the eye icon to verify your spelling.
+
+**Step 4** — _(Optional)_ Check **"Stay logged in"** to remain signed in across browser sessions.
+
+**Step 5** — Click the **"Sign In"** button. The system will authenticate your credentials and redirect you to your role-specific dashboard.
+
+<Info title="Google Single Sign-On">
+You can also click **"Sign In with Google"** to authenticate using your institutional Google account. This uses OAuth 2.0 for secure, passwordless login.
+</Info>
+
+## Role-Based Redirect System
+
+SimpleSphere uses an intelligent redirect system. After login, the platform automatically detects your assigned role and routes you to the correct portal:
+
+| Role | Redirect URL |
+|------|-------------|
+| Student | `/student` |
+| Mentor | `/mentor` |
+| Admin | `/admin` |
+
+<Warning title="Wrong portal?">
+If you are an admin but get redirected to the student portal, your account credentials may be misconfigured. Contact your institution's IT administrator to verify your role assignment.
+</Warning>
+
+## Validation Rules
+
+- Username field must not be empty
+- Password field must not be empty
+- If credentials are incorrect, an **Error Banner** will appear at the top of the form
+- Network connectivity errors are displayed in the same error banner
+
+## Forgot Password
+
+If you have forgotten your password:
+
+1. Click the **"Forgot Password?"** link on the login page
+2. Enter your registered email address
+3. Check your email inbox for a password reset link
+4. Click the link and create a new password
+5. Return to the login page and sign in with your new credentials
+
+<Note title="Admin accounts">
+Admin roles are pre-configured by the institution. You cannot self-register as an admin. Contact your system administrator if you need admin access.
+</Note>
+
+## Security Best Practices
+
+- Never share your login credentials with anyone
+- Always log out when using a shared or public computer
+- Use a strong, unique password with letters, numbers, and special characters
+- Enable **"Stay logged in"** only on personal, trusted devices
+

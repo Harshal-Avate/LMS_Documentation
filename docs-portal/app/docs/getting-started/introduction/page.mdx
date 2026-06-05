@@ -1,0 +1,90 @@
+# Introduction to SimpleSphere Learning
+
+Welcome to the official documentation for **SimpleSphere Learning** — a modern, full-featured Learning Management System (LMS) designed for educational institutions, training centers, and bootcamps.
+
+<Info title="What is SimpleSphere?">
+SimpleSphere Learning is a comprehensive LMS ecosystem that connects students, mentors, and administrators on a single platform, enabling seamless course delivery, progress tracking, and AI-powered learning insights.
+</Info>
+
+## What is SimpleSphere LMS?
+
+SimpleSphere Learning is a cloud-based education platform that provides three distinct portals:
+
+| Portal | Primary Users | Core Functions |
+|--------|---------------|----------------|
+| **Student Portal** | Learners | Courses, Assessments, Analytics, AI Mentor |
+| **Mentor Portal** | Instructors | Course Management, Grading, Scheduling, AI Co-Pilot |
+| **Admin Portal** | Administrators | User Management, Reports, Platform Configuration |
+
+## Platform Architecture
+
+SimpleSphere is built on a role-based access control (RBAC) system. When you log in, the system automatically detects your role and redirects you to the appropriate portal:
+
+- `/student` — for enrolled learners
+- `/mentor` — for assigned instructors
+- `/admin` — for administrative staff
+
+## Key Capabilities
+
+### For Students
+- Access enrolled courses with progress tracking
+- Submit and track assessments
+- View attendance calendar
+- Earn verifiable certificates
+- Use the AI Study Mentor for personalized help
+- Write and run code in the built-in Code Arena
+
+### For Mentors
+- Build and publish course curriculum
+- Track per-student progress with detailed analytics
+- Log technical sessions with SLA monitoring
+- Conduct live classes via Jitsi integration
+- Grade assignments and manage doubts
+- Create coding problems for the Code Arena
+
+### For Administrators
+- Manage users (students and mentors) across centers
+- Configure courses and assign mentors
+- Generate performance reports with AI Insights
+- Issue and track completion certificates
+- Monitor attendance and SLA compliance across the platform
+
+## Technology Stack
+
+SimpleSphere is built with a modern React frontend and a Django REST Framework (DRF) backend. The platform supports:
+
+- **Authentication:** Cookie-based sessions + Google OAuth SSO
+- **Real-time Communication:** WebSocket-based chat system
+- **Video Classes:** Jitsi Meet integration
+- **AI Features:** Multiple AI-powered tools for all three portals
+- **Document Uploads:** Cloudinary-powered file management
+
+## Documentation Structure
+
+This documentation is organized by portal:
+
+1. **Getting Started** — Login, Dashboard Overview
+2. **Student Guide** — All 15 student portal features
+3. **Mentor Guide** — All 27 mentor portal features
+4. **Admin Guide** — All 14 admin portal features
+5. **FAQ** — Common questions and troubleshooting
+
+<Note title="Document Version">
+This documentation covers SimpleSphere Learning **Version 1.0**, released in May 2026. Screenshots and UI descriptions reflect the production build as of this version.
+</Note>
+
+## How to Use This Documentation
+
+- Use the **left sidebar** to navigate between sections
+- Use **⌘K** to open the search dialog and find any topic instantly
+- Use the **Previous / Next** arrows at the bottom of each page to move through sections in order
+- Use the **Table of Contents** on the right to jump to a specific heading on the current page
+
+## Getting Help
+
+If you encounter issues not covered in this documentation, refer to the [FAQ](/docs/faq) section or contact your institution's IT administrator.
+
+---
+
+Ready to begin? Continue to the [Login Guide →](/docs/getting-started/login)
+

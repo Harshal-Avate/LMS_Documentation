@@ -1,0 +1,60 @@
+# Logout
+
+![Visual Guide](/images/admin/logout.png)
+
+The Logout function terminates your administrator session and secures database access. Always log out after completing administrative tasks.
+
+## How to Access
+
+- Select **'Logout'** at the very bottom of the left sidebar navigation.
+
+## UI Elements
+
+| Element | Description |
+|---------|-------------|
+| **Logout Menu Item** | Sidebar trigger with exit icon at the bottom of the nav |
+| **Confirmation Dialog Modal** | Popup with "Confirm Logout" and "Cancel" buttons |
+
+## Logout Steps
+
+**Step 1** " Scroll to the bottom of the left sidebar and click **'Logout'**.
+
+**Step 2** " Review the **confirmation dialog modal** that appears.
+
+**Step 3** " Click **'Confirm Logout'** to:
+  - Clear your session cookies
+  - Close your authenticated session
+  - Revoke active API tokens
+
+**Step 4** " The system will redirect you to the **Login screen**.
+
+## After Logout
+
+- Your admin session is completely terminated
+- All pending unsaved actions are discarded
+- Database access is revoked until next login
+- If "Stay Logged In" was active, it is cleared
+
+## Security Best Practices
+
+<Warning title="Always logout on shared systems">
+Always log out of the admin panel when:
+- Using shared or public computers
+- Leaving your workstation unattended
+- Completing your administrative session
+
+Admin credentials provide full access to student data, financial information, and system configurations. An unattended admin session is a serious security risk.
+</Warning>
+
+## Session Timeout Policy
+
+If configured by your Super Admin, the system will **automatically log you out** after a period of inactivity:
+
+- You will be redirected to the Login page with a session expiration message
+- Any unsaved work in open modals or forms will be lost
+- Log back in with your credentials to resume
+
+<Info title="Session Persistence">
+If you checked **"Stay Logged In"** during login, your session persists until you explicitly log out. Even so, security best practices require logging out at the end of each working session.
+</Info>
+

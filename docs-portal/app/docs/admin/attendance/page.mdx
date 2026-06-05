@@ -1,0 +1,85 @@
+# Attendance Management
+
+![Visual Guide](/images/admin/attendance-management.png)
+
+The Attendance Management module provides administrators with tools to audit daily attendance, export logs, and adjust attendance records for all students.
+
+## How to Access
+
+- Select **'Attendance'** under the **CORE** group in the left sidebar.
+
+## UI Elements
+
+| Element | Description |
+|---------|-------------|
+| **Summary KPI Cards** | Today's Present, Today's Absent, Attendance Marked, Avg. Attendance |
+| **Import/Export Buttons** | Bulk CSV import and Excel export |
+| **Student Registry Table** | Searchable list with attendance percentage progress bars |
+| **View Calendar Button** | Opens the monthly calendar for each student |
+| **Calendar Grid** | Daily attendance marking with Present/Absent toggles |
+
+## Summary KPI Cards
+
+| Card | Description |
+|------|-------------|
+| **Today's Present** | Number of students marked present today |
+| **Today's Absent** | Number of students marked absent today |
+| **Attendance Marked** | Total students who have attendance recorded today |
+| **Avg. Attendance** | Overall average attendance percentage across all students |
+
+## Marking Attendance for a Student
+
+**Step 1** " Locate the student in the **registry table** using the search input.
+
+**Step 2** " Click the **'View Calendar'** button in their row.
+
+**Step 3** " In the calendar grid, navigate to the target month using the **arrow keys**.
+
+**Step 4** " On the desired date:
+  - Click the **Green Checkmark (✓)** to mark **Present**
+  - Click the **Red X (✗)** to mark **Absent**
+
+**Step 5** " Click the **trash bin icon** to clear a daily record entirely.
+
+## Bulk Attendance Import (CSV)
+
+**Step 1** " Click the **'Import Records'** button.
+
+**Step 2** " Download the CSV template from the dialog (contains student ID, date, and status columns).
+
+**Step 3** " Fill in the template with attendance data.
+
+**Step 4** " Upload the completed CSV file.
+
+**Step 5** " Review and confirm the import.
+
+<Note title="CSV Template Format">
+The import CSV template requires these columns:
+- `student_id` " the unique student identifier
+- `date` " in `YYYY-MM-DD` format
+- `status` " either `present` or `absent`
+</Note>
+
+## Exporting Attendance Data
+
+**Step 1** " Click the **'Export'** button at the top of the attendance page.
+
+**Step 2** " Choose the date range and center filter.
+
+**Step 3** " Click **'Export to Excel'**.
+
+**Step 4** " The file downloads as an `.xlsx` spreadsheet containing all attendance records.
+
+## Adjusting Past Records
+
+If an attendance record was marked incorrectly:
+
+1. Open the student's calendar view
+2. Navigate to the incorrect date
+3. Click the opposite icon (if marked Present, click Absent, and vice versa)
+4. The record updates immediately
+
+<Warning title="Manual Override">
+Manual attendance overrides permanently modify the student's attendance record. Ensure you have the appropriate authority to make adjustments, as these changes affect certificate eligibility and SLA metrics.
+</Warning>
+
