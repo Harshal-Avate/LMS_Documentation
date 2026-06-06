@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 
 export default function DocsLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-background bg-grid-pattern relative">
+    <div className="min-h-screen flex flex-col bg-background bg-fluid-pattern relative">
       <Header />
       <div className="flex flex-1 max-w-screen-2xl mx-auto w-full px-4 md:px-8">
         {/* Sticky Sidebar */}
         <aside className="hidden md:block w-60 shrink-0 border-r">
-          <div className="sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto">
+          <div className="sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto sidebar-glass backdrop-blur-md">
             <Sidebar />
           </div>
         </aside>

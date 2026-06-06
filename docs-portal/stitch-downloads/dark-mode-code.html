@@ -1,0 +1,301 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SimpleSphere Learning | Introduction</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1d1b20",
+                        "on-secondary-container": "#645a7d",
+                        "outline-variant": "#cbc4d2",
+                        "on-primary-fixed": "#22005d",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "on-surface-variant": "#494551",
+                        "surface-container-low": "#f8f2fa",
+                        "secondary-container": "#e1d4fd",
+                        "inverse-surface": "#322f35",
+                        "surface-bright": "#fdf7ff",
+                        "on-secondary-fixed": "#1f1635",
+                        "surface-container": "#f2ecf4",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#4f378a",
+                        "on-tertiary-container": "#503d00",
+                        "surface": "#fdf7ff",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#6750a4",
+                        "on-tertiary-fixed": "#241a00",
+                        "tertiary-fixed": "#ffdf93",
+                        "surface-container-high": "#ece6ee",
+                        "secondary-fixed": "#e9ddff",
+                        "secondary": "#63597c",
+                        "surface-container-highest": "#e6e0e9",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#765b00",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "primary-fixed-dim": "#cfbcff",
+                        "outline": "#7a7582",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e6e0e9",
+                        "inverse-primary": "#cfbcff",
+                        "on-primary-container": "#e0d2ff",
+                        "primary-container": "#6750a4",
+                        "tertiary-container": "#c9a74d",
+                        "on-error": "#ffffff",
+                        "background": "#020205",
+                        "inverse-on-surface": "#f5eff7",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "surface-dim": "#ded8e0",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "on-background": "#fdf7ff",
+                        "primary-fixed": "#e9ddff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "grid-size": "20px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #020205;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(79, 55, 138, 0.1) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+        .obsidian-wave {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBG2JCjpH4CDbCTh8wRCIvCkJ5irQEgzO3e4I95t-7wLUr2sWw5J9SEGnMsusDk1ARxkbA9xatcrhTl14m5eDL5YhkzzgvjGBtGAnPIZSq1sGRlFLobJVHlSveGDN5GyQ1NN6Mc9gq4Z52pnI8nRGnUSP2MNev1BKJgIzxF9KrzfNcXS7Qc5cFNACcpNrPzBTMXMugbNEBebS0Snm4d1KojxKFRLRbh3YpjIw23f-C_8DSVT5P5yvCqHI644Tf_Hz-4GDnXxmfkncs');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-accent {
+            box-shadow: 0 0 20px rgba(103, 80, 164, 0.15);
+        }
+        .nav-item-active {
+            background: rgba(103, 80, 164, 0.2);
+            border-right: 3px solid #cfbcff;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background obsidian-wave min-h-screen selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10 h-16">
+<div class="flex justify-between items-center px-6 h-full w-full max-w-[1920px] mx-auto">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-white flex items-center justify-center p-1">
+<svg class="w-full h-full fill-black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+</div>
+<span class="font-bold text-lg tracking-tight text-white uppercase">SimpleSphere <span class="font-normal opacity-70">Learning</span></span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-lg">search</span>
+<input class="bg-white/5 border border-white/10 rounded-full pl-10 pr-4 py-1.5 w-80 text-sm focus:ring-1 focus:ring-primary-fixed-dim outline-none transition-all placeholder:text-white/30" placeholder="Search docs..." type="text">
+</div>
+<button class="material-symbols-outlined text-white/60 hover:text-white transition-colors">dark_mode</button>
+<a class="bg-[#4f378a] hover:bg-[#6750a4] text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2" href="#">
+                    Visit Platform
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r border-white/10 flex flex-col pt-8 hidden md:flex">
+<nav class="flex-1 space-y-1">
+<a class="flex items-center justify-between px-6 py-3 text-primary-fixed-dim bg-white/5 border-r-4 border-primary-fixed-dim transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span class="text-xs font-bold uppercase tracking-wider">Getting Started</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-6 py-3 text-white/50 hover:text-white hover:bg-white/5 transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">school</span>
+<span class="text-xs font-bold uppercase tracking-wider">Student Guide</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-6 py-3 text-white/50 hover:text-white hover:bg-white/5 transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span class="text-xs font-bold uppercase tracking-wider">Mentor Guide</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-6 py-3 text-white/50 hover:text-white hover:bg-white/5 transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">admin_panel_settings</span>
+<span class="text-xs font-bold uppercase tracking-wider">Admin Guide</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-6 py-3 text-white/50 hover:text-white hover:bg-white/5 transition-all mt-8" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="text-xs font-bold uppercase tracking-wider">Support</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-64 mr-0 lg:mr-80 pt-24 pb-16 px-6 lg:px-16">
+<div class="max-w-4xl">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-xs font-medium text-white/40 mb-8">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span>Docs</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span>Getting Started</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="text-white/80">Introduction</span>
+</nav>
+<!-- Hero Section -->
+<header class="mb-10">
+<h1 class="font-display-lg text-[40px] leading-tight text-[#cfbcff] mb-6">Introduction to SimpleSphere Learning</h1>
+<p class="text-[17px] text-white/70 leading-relaxed max-w-3xl">
+                    Welcome to the official documentation for <strong class="text-white">SimpleSphere Learning</strong> — a modern, full-featured Learning Management System (LMS) designed for educational institutions, training centers, and bootcamps.
+                </p>
+</header>
+<!-- Info Box -->
+<section class="mb-12 rounded-xl border border-primary-container/30 bg-primary-container/5 p-8 relative overflow-hidden">
+<div class="flex gap-4 relative z-10">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[24px] shrink-0">info</span>
+<div>
+<h2 class="text-lg font-bold text-white mb-4">What is SimpleSphere?</h2>
+<p class="text-white/60 leading-relaxed">
+                            SimpleSphere Learning is a comprehensive LMS ecosystem that connects students, mentors, and administrators on a single platform, enabling seamless course delivery, progress tracking, and AI-powered learning insights.
+                        </p>
+</div>
+</div>
+</section>
+<!-- Subheading -->
+<section class="mb-8">
+<h2 class="text-2xl font-bold text-[#cfbcff] mb-6">What is SimpleSphere LMS?</h2>
+<p class="text-white/70 mb-8">SimpleSphere Learning is a cloud-based education platform that provides three distinct portals:</p>
+<!-- Detailed Portal Table -->
+<div class="overflow-x-auto rounded-xl border border-white/10 glass-panel">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-white/5 border-b border-white/10">
+<th class="p-5 font-bold text-white/90 text-sm">Portal</th>
+<th class="p-5 font-bold text-white/90 text-sm">Primary Users</th>
+<th class="p-5 font-bold text-white/90 text-sm">Core Functions</th>
+</tr>
+</thead>
+<tbody class="text-white/60 text-[14px]">
+<tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+<td class="p-5 font-bold text-white">Student Portal</td>
+<td class="p-5">Learners</td>
+<td class="p-5">Courses, Assessments, Analytics, AI Mentor</td>
+</tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+<td class="p-5 font-bold text-white">Mentor Portal</td>
+<td class="p-5">Instructors</td>
+<td class="p-5">Course Management, Grading, Scheduling, AI Co-Pilot</td>
+</tr>
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="p-5 font-bold text-white">Admin Portal</td>
+<td class="p-5">Administrators</td>
+<td class="p-5">User Management, Reports, Platform Configuration</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- Right-hand Navigation -->
+<aside class="fixed right-0 top-16 h-[calc(100vh-64px)] w-80 p-8 hidden lg:block overflow-y-auto">
+<h5 class="text-[11px] font-bold text-white/40 uppercase tracking-widest mb-6">On This Page</h5>
+<ul class="space-y-4 border-l border-white/10 pl-5 text-[13px]">
+<li>
+<a class="text-white/80 font-medium hover:text-white transition-colors" href="#">What is SimpleSphere LMS?</a>
+</li>
+<li>
+<a class="text-white/50 hover:text-white transition-colors" href="#">Platform Architecture</a>
+</li>
+<li>
+<div class="text-white/50">Key Capabilities</div>
+<ul class="mt-3 space-y-3 pl-4">
+<li><a class="text-white/40 hover:text-white transition-colors" href="#">For Students</a></li>
+<li><a class="text-white/40 hover:text-white transition-colors" href="#">For Mentors</a></li>
+<li><a class="text-white/40 hover:text-white transition-colors" href="#">For Administrators</a></li>
+</ul>
+</li>
+<li>
+<a class="text-white/50 hover:text-white transition-colors" href="#">Technology Stack</a>
+</li>
+<li>
+<a class="text-white/50 hover:text-white transition-colors" href="#">Documentation Structure</a>
+</li>
+<li>
+<a class="text-white/50 hover:text-white transition-colors" href="#">How to Use This Documentation</a>
+</li>
+<li>
+<a class="text-white/50 hover:text-white transition-colors" href="#">Getting Help</a>
+</li>
+</ul>
+</aside>
+<!-- Footer -->
+<footer class="w-full py-8 border-t border-white/5 md:pl-64 lg:pr-80 mt-12 bg-black/20">
+<div class="flex flex-col items-center gap-4">
+<div class="flex gap-8">
+<a class="text-white/30 hover:text-white transition-colors text-[12px] font-medium" href="#">Privacy Policy</a>
+<a class="text-white/30 hover:text-white transition-colors text-[12px] font-medium" href="#">Terms of Service</a>
+<a class="text-white/30 hover:text-white transition-colors text-[12px] font-medium" href="#">Security</a>
+</div>
+<p class="text-white/20 text-[11px] font-medium uppercase tracking-widest">
+                © 2024 SimpleSphere Learning. Built with precision.
+            </p>
+</div>
+</footer>
+</body></html>

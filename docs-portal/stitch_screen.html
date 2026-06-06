@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SimpleSphere Dashboard</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#131b2e",
+                    "inverse-surface": "#283044",
+                    "outline": "#777587",
+                    "on-secondary-fixed-variant": "#004c6e",
+                    "surface-container-highest": "#dae2fd",
+                    "tertiary-container": "#a44100",
+                    "surface-container-low": "#f2f3ff",
+                    "on-primary-container": "#dad7ff",
+                    "secondary-container": "#39b8fd",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eef0ff",
+                    "tertiary": "#7e3000",
+                    "surface-dim": "#d2d9f4",
+                    "primary-container": "#4f46e5",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-tint": "#4d44e3",
+                    "on-surface-variant": "#464555",
+                    "on-tertiary-container": "#ffd2be",
+                    "primary": "#3525cd",
+                    "surface-bright": "#faf8ff",
+                    "primary-fixed": "#e2dfff",
+                    "on-tertiary-fixed": "#351000",
+                    "tertiary-fixed": "#ffdbcc",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-variant": "#dae2fd",
+                    "on-error": "#ffffff",
+                    "surface-container": "#eaedff",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "error-container": "#ffdad6",
+                    "surface": "#faf8ff",
+                    "background": "#faf8ff",
+                    "on-secondary-container": "#004666",
+                    "secondary-fixed": "#c9e6ff",
+                    "surface-container-high": "#e2e7ff",
+                    "secondary": "#006591",
+                    "on-tertiary-fixed-variant": "#7b2f00",
+                    "outline-variant": "#c7c4d8",
+                    "on-background": "#131b2e",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#001e2f",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "secondary-fixed-dim": "#89ceff",
+                    "on-primary-fixed": "#0f0069",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "base": "4px",
+                    "xs": "4px",
+                    "xl": "48px",
+                    "md": "16px",
+                    "sidebar-width": "280px",
+                    "sm": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "code-snippet": ["JetBrains Mono"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "label-sm": ["JetBrains Mono"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "code-snippet": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        body {
+            background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvkVFygk1Z62W5GmC2J-7fEs7wtWGbEOUGDWpcFErXEfvZJNy6z1yQBApBziWcQEjz-zmEVS6wdZKWZKwAviDb4grpWS7B7CX5LsZnCVr-ZN4N7ihNYurFCB_Ljk_YEc4rTA1JUa0zxFxrEoFLZz3Gi-bih1GMFh5rn_QSOTbG8bkwwB4czKxglRkJgouTI_hlMKlM6RmjUya1SzE_wVoGhb2YVLIhfGbkHYvzDLjs2g82G52DyBsS342kz');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .bg-overlay {
+            background-color: rgba(250, 248, 255, 0.94);
+            backdrop-filter: blur(4px);
+        }
+        .bento-card {
+            background-color: #ffffff;
+            border: 1px solid #c7c4d8;
+            transition: all 150ms ease-in-out;
+        }
+        .bento-card:hover {
+            transform: translateY(-2px);
+            border-color: #3525cd;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface bg-overlay min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-lg w-full sticky top-0 z-50 bg-surface dark:bg-on-surface border-b border-outline-variant dark:border-outline h-16">
+<div class="flex items-center gap-md">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">SimpleSphere</span>
+<div class="hidden md:flex ml-lg gap-lg h-full items-center">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-150" href="#">My Courses</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-150" href="#">Mentors</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant">search</span>
+<input class="pl-10 pr-4 py-1.5 border border-outline-variant rounded-lg bg-surface-container-low text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="Search resources..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="help_outline">help_outline</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling young person with warm lighting and a neutral blurred studio background. The style is clean, high-resolution, and corporate yet friendly, matching a modern light-mode learning platform. The color palette emphasizes soft skin tones and a hint of primary blue in the clothing to align with the SimpleSphere brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJr_mywym_VIvoohgTciPb_RwXiUrnnIKPT7Gro-eBgrBFeI24QP_OdIv6kJKXmYDYMxcYej4AmsYuY4C7ZOUISHVGMebFjqPsfL_KNmNTJ1s9yPXlkqmWZK7Z-nU3Sc96sMKmy8Oi6w1NqVOrJsP3cNMrKDH0x5fDMFaVi8v9ooyexbkXwXPIzPV-D7oa52vJA7qrZY29-vu13DpDECN1P5Y0JeLey3c2U_MlHFiiiJ5CplDxYYij_6SXEzlBcxmWdDPPnEhXCFEX"/>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar (Hidden on small screens) -->
+<aside class="hidden md:flex flex-col w-sidebar-width shrink-0 border-r border-outline-variant bg-surface-container-low h-[calc(100vh-64px)] sticky top-16">
+<div class="p-lg">
+<div class="flex items-center gap-3 mb-sm">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<div>
+<p class="font-headline-md text-[18px] text-on-surface font-bold">Documentation</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">v2.4.0</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 mt-4">
+<a class="flex items-center gap-3 py-3 px-4 border-l-2 border-primary bg-primary-fixed text-primary font-bold transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Introduction</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-on-surface-variant hover:bg-surface-container-high transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Quickstart</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-on-surface-variant hover:bg-surface-container-high transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="extension">extension</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Core Concepts</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-on-surface-variant hover:bg-surface-container-high transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Advanced Guides</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 text-on-surface-variant hover:bg-surface-container-high transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">API Reference</span>
+</a>
+</nav>
+<div class="p-lg border-t border-outline-variant">
+<button class="w-full py-3 bg-primary text-on-primary font-bold rounded-xl mb-md hover:bg-primary-container transition-colors shadow-lg shadow-primary/20">
+                    Upgrade Plan
+                </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 py-2 px-4 text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Settings</span>
+</a>
+<a class="flex items-center gap-3 py-2 px-4 text-error hover:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Log Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-lg md:p-xl overflow-x-hidden">
+<div class="max-w-container-max mx-auto">
+<!-- Overview Header -->
+<header class="mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-xs">Welcome back, Alex</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Wednesday, October 25th — Your learning path is 68% complete.</p>
+</div>
+<button class="flex items-center gap-2 px-lg py-3 bg-primary text-on-primary rounded-xl font-bold shadow-md hover:translate-y-[-2px] transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                        Start New Course
+                    </button>
+</header>
+<!-- Stat Cards Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
+<div class="bento-card p-lg rounded-xl flex flex-col justify-between h-32">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider">Active Courses</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface">12</span>
+<span class="text-secondary font-bold text-sm">+2 this month</span>
+</div>
+</div>
+<div class="bento-card p-lg rounded-xl flex flex-col justify-between h-32">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider">Completed Tasks</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface">48</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div class="bento-card p-lg rounded-xl flex flex-col justify-between h-32">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider">Learning Hours</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface">156h</span>
+<span class="text-tertiary font-bold text-sm">Top 5% student</span>
+</div>
+</div>
+<div class="bento-card p-lg rounded-xl flex flex-col justify-between h-32">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider">Mentor Sessions</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface">5</span>
+<span class="text-on-surface-variant text-sm">Next: tomorrow</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-xl items-start">
+<!-- Recent Activity (Large Bento Piece) -->
+<div class="lg:col-span-2 space-y-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Activity</h2>
+<button class="text-primary font-bold hover:underline">View all</button>
+</div>
+<div class="space-y-md">
+<div class="bento-card p-md rounded-xl flex items-center gap-md">
+<div class="w-12 h-12 bg-secondary-fixed rounded-lg flex items-center justify-center text-on-secondary-fixed-variant shrink-0">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-on-surface font-semibold">New module available in 'Advanced UI Design'</p>
+<p class="text-sm text-on-surface-variant">2 hours ago • Module 4: Accessibility Masterclass</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+<div class="bento-card p-md rounded-xl flex items-center gap-md">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" data-icon="comment">comment</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-on-surface font-semibold">Feedback received from Mentor Sarah</p>
+<p class="text-sm text-on-surface-variant">Yesterday at 4:15 PM • "Great progress on the typography scales..."</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+<div class="bento-card p-md rounded-xl flex items-center gap-md">
+<div class="w-12 h-12 bg-tertiary-fixed rounded-lg flex items-center justify-center text-tertiary-fixed-dim shrink-0">
+<span class="material-symbols-outlined" data-icon="stars">stars</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-on-surface font-semibold">Earned 'Precision Expert' Badge</p>
+<p class="text-sm text-on-surface-variant">2 days ago • For completing the Layout &amp; Spacing assessment</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+</div>
+<!-- Featured Content Visualization -->
+<div class="relative overflow-hidden rounded-2xl h-64 bento-card border-none">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A clean, minimalist workspace with a high-end laptop, a cup of coffee, and some design magazines on a white desk. The lighting is bright and natural, coming from a side window, creating a serene and focused academic atmosphere. The aesthetic is extremely modern and follows a professional, high-contrast light-mode style with soft blue and white accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrF2qUfDuPjkIfqhWs77p3bfEuYcOUR9XCTFoWpy_ewljwvqA4JD8JCPBrimUbyVD3Va9-7NtkxypeQ48RP3rus1lSrrj5n9q1P4oyZAQ7SV1srfLO0MYkUxuGCdyn7n-53yvj0DghkuX-5aK64s5AJgnMByhkuOPxYzUV0ac2zA7vZ1Dp3IFkyoD3iPsZqKP8MVhqtZrI8hZA3izcWr9L8abAGWfSJsAb9hPZfGwZrAs1z6-w9tqYij_eooPRC3LtveXhB1GocnJi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 p-lg w-full text-on-primary">
+<span class="px-2 py-1 bg-secondary rounded text-[10px] uppercase font-bold tracking-widest mb-2 inline-block">Recommended</span>
+<h3 class="font-headline-md text-headline-md mb-2">Mastering High-Performance Documentation</h3>
+<p class="font-body-md opacity-80 text-sm">Learn how to build frictionless reading experiences for developer platforms.</p>
+</div>
+</div>
+</div>
+<!-- Sidebar Widget: Upcoming Events -->
+<aside class="space-y-lg">
+<div class="bento-card p-lg rounded-2xl">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-md text-[20px] text-on-surface">Schedule</h2>
+<span class="material-symbols-outlined text-primary cursor-pointer">calendar_today</span>
+</div>
+<div class="space-y-lg">
+<div class="border-l-4 border-primary pl-4 py-1">
+<p class="text-xs font-label-sm uppercase text-outline">Today, 2:00 PM</p>
+<p class="font-body-md text-on-surface font-bold">1-on-1 Session: Sarah K.</p>
+<p class="text-sm text-on-surface-variant">Topic: Design System Architecture</p>
+<div class="mt-2 flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white bg-surface-container-high overflow-hidden">
+<img data-alt="Portrait of a professional female design mentor with a warm and approachable expression. She is in a brightly lit, modern home office setting with subtle hints of technology in the background. The lighting is soft and flattering, emphasizing a professional yet accessible persona for a learning platform dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh22b-9IWBYlurlFuXje5nqcse79bY5ofIJyVow-vy7lRXi0HnkSzcfyrZLrSqZPSh3PV9xnxSr_NmeOCIdtnNMYKkUJnVLJ-VJWsAXfN5tZTYUiBP8dfGy5P089qpc9IBN1vB10i6to3OI3n5O1dHTt9g0rp2Bt-yBuVR1cdtskUunHSkv-pxKr9xOC2h4TsRSHY46itdDTAbBTZwqCzYJwU6mELwEmA7di8Bs8Uk_9Pzn3Y0BDx3Kfm7a-BLsIZeH5ep0mmqsCJT"/>
+</div>
+</div>
+</div>
+<div class="border-l-4 border-secondary pl-4 py-1">
+<p class="text-xs font-label-sm uppercase text-outline">Oct 27, 10:00 AM</p>
+<p class="font-body-md text-on-surface font-bold">Frontend Workshop</p>
+<p class="text-sm text-on-surface-variant">Global Community Meetup</p>
+</div>
+<div class="border-l-4 border-outline-variant pl-4 py-1">
+<p class="text-xs font-label-sm uppercase text-outline">Oct 30, 11:59 PM</p>
+<p class="font-body-md text-on-surface font-bold">Project Deadline</p>
+<p class="text-sm text-on-surface-variant">Module 3: Visual Hierarchies</p>
+</div>
+</div>
+<button class="w-full mt-lg py-2 border border-outline-variant text-on-surface font-bold rounded-lg hover:bg-surface-container-low transition-colors">
+                                Browse Calendar
+                            </button>
+</div>
+<!-- Mini Learning Progress -->
+<div class="bento-card p-lg rounded-2xl bg-on-surface text-on-primary">
+<h3 class="font-headline-md text-[18px] mb-md">Quick Progress</h3>
+<div class="space-y-md">
+<div>
+<div class="flex justify-between text-xs mb-1 opacity-70">
+<span>UI Design Track</span>
+<span>75%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant/20 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-3/4"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1 opacity-70">
+<span>JS Fundamentals</span>
+<span>42%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[42%]"></div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</div>
+<!-- Micro-interaction Scripts -->
+<script>
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.borderColor = '#3525cd';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.borderColor = '#c7c4d8';
+            });
+        });
+
+        // Search highlight micro-interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary/20', 'border-primary');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary/20', 'border-primary');
+        });
+    </script>
+</body></html>

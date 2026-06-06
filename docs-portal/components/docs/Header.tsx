@@ -15,11 +15,11 @@ export function Header() {
         <MobileSidebar />
 
         <Link href="/" className="flex items-center shrink min-w-0">
-          <Image 
-            src="/logo/simplespherelearning.png" 
-            alt="SimpleSphere Learning" 
-            width={320} 
-            height={80} 
+          <Image
+            src="/logo/simplespherelearning.png"
+            alt="SimpleSphere Learning"
+            width={320}
+            height={80}
             className="object-contain h-12 w-auto dark:invert-0 invert"
             priority
           />

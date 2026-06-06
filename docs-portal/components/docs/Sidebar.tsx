@@ -42,7 +42,7 @@ export function Sidebar({ className, onNavigate }: SidebarProps) {
 
   useEffect(() => {
     if (!pathname) return;
-    
+
     const currentSection = navigation.find(section => {
       return section.items.some(item => {
         if (item.href === pathname) return true;
@@ -75,7 +75,7 @@ export function Sidebar({ className, onNavigate }: SidebarProps) {
         return (
           <div key={section.title}>
             {/* Section Header */}
-            <div 
+            <div
               className="flex items-center gap-1.5 px-3 mb-2 cursor-pointer group hover:bg-muted/50 py-1.5 rounded-md transition-colors"
               onClick={() => toggleSection(section.title)}
             >
@@ -94,71 +94,71 @@ export function Sidebar({ className, onNavigate }: SidebarProps) {
 
             {/* Section Items */}
             {!isCollapsed && (
-            <ul className="space-y-0.5">
-              {section.items.map((item) => {
-                const isActive = pathname === item.href;
+              <ul className="space-y-0.5">
+                {section.items.map((item) => {
+                  const isActive = pathname === item.href;
 
-                if (item.items && item.items.length > 0) {
-                  // Grouped item with sub-items
-                  const isGroupActive = item.items.some(
-                    (sub) => pathname === sub.href
-                  );
-                  return (
-                    <li key={item.title}>
-                      <div
-                        className={cn(
-                          "flex items-center justify-between pl-9 pr-3 py-1.5 rounded-md text-sm font-medium transition-colors cursor-pointer",
-                          isGroupActive
-                            ? "text-foreground"
-                            : "text-muted-foreground hover:text-foreground"
-                        )}
-                      >
-                        {item.title}
-                        <ChevronRight className="h-3.5 w-3.5" />
-                      </div>
-                      <ul className="ml-4 mt-0.5 space-y-0.5">
-                        {item.items.map((sub) => {
-                          const isSubActive = pathname === sub.href;
-                          return (
-                            <li key={sub.href}>
+                  if (item.items && item.items.length > 0) {
+                    // Grouped item with sub-items
+                    const isGroupActive = item.items.some(
+                      (sub) => pathname === sub.href
+                    );
+                    return (
+                      <li key={item.title}>
+                        <div
+                          className={cn(
+                            "flex items-center justify-between pl-9 pr-3 py-1.5 rounded-md text-sm font-medium transition-colors cursor-pointer",
+                            isGroupActive
+                              ? "text-foreground"
+                              : "text-muted-foreground hover:text-foreground"
+                          )}
+                        >
+                          {item.title}
+                          <ChevronRight className="h-3.5 w-3.5" />
+                        </div>
+                        <ul className="ml-4 mt-0.5 space-y-0.5">
+                          {item.items.map((sub) => {
+                            const isSubActive = pathname === sub.href;
+                            return (
+                              <li key={sub.href}>
                                 <Link
                                   href={sub.href!}
                                   onClick={onNavigate}
                                   className={cn(
-                                  "flex items-center gap-2 pl-9 pr-3 py-1.5 rounded-md text-sm transition-colors",
-                                  isSubActive
-                                    ? "bg-primary/10 text-primary font-medium border-l-2 border-[#4BB8FA] shadow-[4px_0_10px_-2px_#4BB8FA]"
-                                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                                )}
-                              >
-                                {sub.title}
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
+                                    "flex items-center gap-2 pl-9 pr-3 py-1.5 rounded-md text-sm transition-colors",
+                                    isSubActive
+                                      ? "bg-primary/10 text-primary font-medium border-l-2 border-[#4BB8FA] shadow-[4px_0_10px_-2px_#4BB8FA]"
+                                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                                  )}
+                                >
+                                  {sub.title}
+                                </Link>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </li>
+                    );
+                  }
+
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href!}
+                        onClick={onNavigate}
+                        className={cn(
+                          "flex items-center pl-9 pr-3 py-1.5 rounded-md text-sm transition-colors",
+                          isActive
+                            ? "bg-primary/10 text-primary font-medium border-l-2 border-[#4BB8FA] shadow-[4px_0_10px_-2px_#4BB8FA]"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        )}
+                      >
+                        {item.title}
+                      </Link>
                     </li>
                   );
-                }
-
-                return (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href!}
-                      onClick={onNavigate}
-                      className={cn(
-                        "flex items-center pl-9 pr-3 py-1.5 rounded-md text-sm transition-colors",
-                        isActive
-                          ? "bg-primary/10 text-primary font-medium border-l-2 border-[#4BB8FA] shadow-[4px_0_10px_-2px_#4BB8FA]"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                      )}
-                    >
-                      {item.title}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+                })}
+              </ul>
             )}
           </div>
         );
