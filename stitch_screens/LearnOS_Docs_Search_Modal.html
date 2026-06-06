@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnOS Docs - Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c7c4d8",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-secondary-fixed": "#131b2e",
+                        "primary": "#3525cd",
+                        "tertiary": "#46494b",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#c3c0ff",
+                        "on-secondary-container": "#5c647a",
+                        "secondary": "#565e74",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-surface-variant": "#464555",
+                        "background": "#f8f9ff",
+                        "surface": "#f8f9ff",
+                        "surface-dim": "#cbdbf5",
+                        "secondary-fixed": "#dae2fd",
+                        "on-tertiary-fixed": "#191c1e",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-background": "#0b1c30",
+                        "secondary-container": "#dae2fd",
+                        "on-primary-fixed": "#0f0069",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#213145",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-container": "#dadcde",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "surface-container-high": "#dce9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-surface": "#0b1c30",
+                        "surface-tint": "#4d44e3",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#e2dfff",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-container": "#4f46e5",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "tertiary-container": "#5e6163",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "outline": "#777587"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sidebar-width": "280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "code": ["jetbrainsMono"],
+                        "body-sm": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h3": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "h1": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "code": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h1-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .command-palette-overlay {
+            background: rgba(11, 28, 48, 0.6);
+            backdrop-filter: blur(8px);
+        }
+        .dark-surface {
+            background-color: #1C1C1E;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .result-item:hover {
+            background-color: #2C2C2E;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-hidden">
+<!-- Top Navigation Bar (Shared Component Anchor) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="font-h2 text-h2 font-bold text-primary">LearnOS Docs</div>
+<nav class="hidden md:flex items-center gap-8 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary" href="#">Guides</a>
+<a class="text-on-surface-variant hover:text-primary" href="#">API</a>
+<a class="text-on-surface-variant hover:text-primary" href="#">Community</a>
+<a class="text-on-surface-variant hover:text-primary" href="#">Changelog</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="text-secondary font-label-md">v2.4.0</span>
+<div class="flex gap-2">
+<span class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary">dark_mode</span>
+<span class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary">menu</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Side Navigation Bar (Shared Component Anchor) -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-sidebar-width bg-surface border-r border-outline-variant hidden lg:flex flex-col p-4 gap-2 overflow-y-auto">
+<div class="mb-4">
+<h3 class="font-h3 text-h3 font-bold text-primary">Documentation</h3>
+<p class="text-on-surface-variant font-label-sm">v2.4.0</p>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-3 p-2 text-on-surface-variant hover:bg-surface-container rounded-lg cursor-pointer transition-all">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span class="font-label-md text-label-md">Getting Started</span>
+</div>
+<div class="flex items-center gap-3 p-2 text-on-surface-variant hover:bg-surface-container rounded-lg cursor-pointer transition-all">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label-md text-label-md">Student Guide</span>
+</div>
+<div class="flex items-center gap-3 p-2 text-on-surface-variant hover:bg-surface-container rounded-lg cursor-pointer transition-all">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">Mentor Guide</span>
+</div>
+<div class="flex items-center gap-3 p-2 text-on-surface-variant hover:bg-surface-container rounded-lg cursor-pointer transition-all">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="font-label-md text-label-md">Admin Guide</span>
+</div>
+<div class="flex items-center gap-3 p-2 text-on-surface-variant hover:bg-surface-container rounded-lg cursor-pointer transition-all">
+<span class="material-symbols-outlined">help_center</span>
+<span class="font-label-md text-label-md">FAQ</span>
+</div>
+<div class="flex items-center gap-3 p-2 text-on-surface-variant hover:bg-surface-container rounded-lg cursor-pointer transition-all">
+<span class="material-symbols-outlined">build</span>
+<span class="font-label-md text-label-md">Troubleshooting</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Underlay -->
+<main class="lg:ml-sidebar-width mt-16 p-gutter max-w-container-max mx-auto opacity-20">
+<div class="max-w-[800px] mx-auto">
+<h1 class="font-h1 text-h1 mb-8">System Overview</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-lg">
+<h2 class="font-h2 text-h2 mb-4">Core Principles</h2>
+<p class="text-on-surface-variant">The LearnOS platform is built for high-density information environments. Our documentation covers every aspect of the student, mentor, and administrator lifecycle.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-lg">
+<h2 class="font-h2 text-h2 mb-4">Architecture</h2>
+<p class="text-on-surface-variant">LearnOS utilizes a modular micro-services architecture to ensure scalability and developer-centric precision for modern technical education needs.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Command Palette Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-start justify-center pt-[153px] command-palette-overlay">
+<!-- Search Modal -->
+<div class="w-[580px] dark-surface text-white rounded-xl shadow-2xl border border-white/10 overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
+<!-- Header -->
+<div class="px-5 py-4 flex items-center gap-3 border-b border-white/5">
+<span class="material-symbols-outlined text-white/40">search</span>
+<input autofocus="" class="flex-1 bg-transparent border-none focus:ring-0 text-white placeholder-white/30 font-body-md" placeholder="Search LearnOS docs..." type="text"/>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded border border-white/10 bg-white/5 text-[10px] font-mono text-white/40 tracking-wider">
+                    ESC
+                </div>
+</div>
+<!-- Results List -->
+<div class="max-h-[440px] overflow-y-auto py-2">
+<!-- Result 1 -->
+<div class="result-item group flex items-center gap-4 px-4 py-3 cursor-pointer mx-2 rounded-lg transition-colors">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="px-1.5 py-0.5 rounded bg-white/5 text-white/40 text-[10px] font-semibold uppercase tracking-wider">Student Guide</span>
+<span class="text-white/90 font-medium">My Courses</span>
+</div>
+<p class="text-white/40 text-[12px] truncate">Browse enrolled courses, track progress and access materials</p>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-white/60 transition-colors">chevron_right</span>
+</div>
+<!-- Result 2 -->
+<div class="result-item group flex items-center gap-4 px-4 py-3 cursor-pointer mx-2 rounded-lg transition-colors">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="px-1.5 py-0.5 rounded bg-white/5 text-white/40 text-[10px] font-semibold uppercase tracking-wider">Mentor Guide</span>
+<span class="text-white/90 font-medium">Course Management Hub</span>
+</div>
+<p class="text-white/40 text-[12px] truncate">Create and manage course content, modules and enrollments</p>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-white/60 transition-colors">chevron_right</span>
+</div>
+<!-- Result 3 (ACTIVE) -->
+<div class="bg-primary px-4 py-3 flex items-center gap-4 cursor-pointer mx-2 rounded-lg transition-colors">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="px-1.5 py-0.5 rounded bg-white/20 text-white/90 text-[10px] font-semibold uppercase tracking-wider">Admin Guide</span>
+<span class="text-white font-medium">User Management</span>
+</div>
+<p class="text-white/70 text-[12px] truncate">Add, edit, deactivate and assign roles to platform users</p>
+</div>
+<span class="material-symbols-outlined text-white/80">chevron_right</span>
+</div>
+<!-- Result 4 -->
+<div class="result-item group flex items-center gap-4 px-4 py-3 cursor-pointer mx-2 rounded-lg transition-colors">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="px-1.5 py-0.5 rounded bg-white/5 text-white/40 text-[10px] font-semibold uppercase tracking-wider">Student Guide</span>
+<span class="text-white/90 font-medium">AI Study Mentor</span>
+</div>
+<p class="text-white/40 text-[12px] truncate">Get AI-powered explanations and study assistance</p>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-white/60 transition-colors">chevron_right</span>
+</div>
+<!-- Result 5 -->
+<div class="result-item group flex items-center gap-4 px-4 py-3 cursor-pointer mx-2 rounded-lg transition-colors">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="px-1.5 py-0.5 rounded bg-white/5 text-white/40 text-[10px] font-semibold uppercase tracking-wider">Mentor Guide</span>
+<span class="text-white/90 font-medium">Grading Ledger</span>
+</div>
+<p class="text-white/40 text-[12px] truncate">Review and grade assignment submissions</p>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-white/60 transition-colors">chevron_right</span>
+</div>
+<!-- Result 6 -->
+<div class="result-item group flex items-center gap-4 px-4 py-3 cursor-pointer mx-2 rounded-lg transition-colors">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="px-1.5 py-0.5 rounded bg-white/5 text-white/40 text-[10px] font-semibold uppercase tracking-wider">Admin Guide</span>
+<span class="text-white/90 font-medium">Analytics &amp; Reports</span>
+</div>
+<p class="text-white/40 text-[12px] truncate">Export attendance, performance and completion reports</p>
+</div>
+<span class="material-symbols-outlined text-white/20 group-hover:text-white/60 transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Footer -->
+<div class="px-5 py-3 border-t border-white/5 flex items-center gap-6">
+<div class="flex items-center gap-2 text-white/30 text-[11px]">
+<span class="flex items-center gap-1 border border-white/10 px-1 py-0.5 rounded bg-white/5">
+<span class="material-symbols-outlined text-[12px]">keyboard_arrow_up</span>
+<span class="material-symbols-outlined text-[12px]">keyboard_arrow_down</span>
+</span>
+<span>Navigate</span>
+</div>
+<div class="flex items-center gap-2 text-white/30 text-[11px]">
+<span class="border border-white/10 px-1 py-0.5 rounded bg-white/5 font-mono">ENTER</span>
+<span>Select</span>
+</div>
+<div class="flex items-center gap-2 text-white/30 text-[11px]">
+<span class="border border-white/10 px-1 py-0.5 rounded bg-white/5 font-mono">ESC</span>
+<span>Close</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl -z-10 blur-3xl opacity-10 pointer-events-none">
+<div class="aspect-square bg-gradient-to-tr from-primary to-surface-tint rounded-full"></div>
+</div>
+</body></html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mentor Command Centre (Dashboard) | LearnOS Docs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#4d44e3",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#eff4ff",
+                    "on-secondary-container": "#5c647a",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "outline-variant": "#c7c4d8",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#dae2fd",
+                    "surface-dim": "#cbdbf5",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#5e6163",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container": "#e5eeff",
+                    "on-tertiary-container": "#dadcde",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-container": "#dae2fd",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-high": "#dce9ff",
+                    "on-surface": "#0b1c30",
+                    "on-surface-variant": "#464555",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#0f0069",
+                    "primary-container": "#4f46e5",
+                    "outline": "#777587",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "inverse-surface": "#213145",
+                    "primary": "#3525cd",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#131b2e",
+                    "primary-fixed": "#e2dfff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#e0e3e5",
+                    "on-primary-container": "#dad7ff",
+                    "secondary": "#565e74",
+                    "on-tertiary-fixed": "#191c1e",
+                    "surface": "#f8f9ff",
+                    "inverse-primary": "#c3c0ff",
+                    "background": "#f8f9ff",
+                    "tertiary": "#46494b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sidebar-width": "280px",
+                    "unit": "4px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "h2": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h3": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-md": ["Inter"],
+                    "code": ["jetbrainsMono"],
+                    "h1-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h1": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "code": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h1-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .content-well {
+            max-width: 740px;
+        }
+        .sidebar-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0,0,0,0.1) transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant h-16">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-h2 text-h2 font-bold text-primary">LearnOS Docs</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Guides</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">API</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Community</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Changelog</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded">v2.4.0</span>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded transition-colors">dark_mode</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded transition-colors md:hidden">menu</button>
+</div>
+</div>
+</header>
+<div class="max-w-container-max mx-auto flex">
+<!-- SideNavBar (Left) -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-sidebar-width bg-surface border-r border-outline-variant hidden lg:flex flex-col p-4 gap-2 overflow-y-auto sidebar-scroll">
+<div class="mb-4">
+<h3 class="font-h3 text-h3 font-bold text-primary">Documentation</h3>
+<p class="text-on-surface-variant text-label-sm">v2.4.0</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">rocket_launch</span>
+                    Getting Started
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">school</span>
+                    Student Guide
+                </a>
+<!-- Expanded Section -->
+<div class="flex flex-col gap-1 mt-2">
+<button class="flex items-center justify-between w-full px-3 py-2 bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">psychology</span>
+                            Mentor Guide
+                        </div>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+<div class="flex flex-col ml-9 mt-1 border-l border-outline-variant gap-1">
+<a class="px-3 py-1.5 text-on-surface-variant hover:text-primary font-label-md text-label-md" href="#">Overview</a>
+<a class="px-3 py-1.5 text-on-surface-variant hover:text-primary font-label-md text-label-md" href="#">Login &amp; Access Control</a>
+<a class="px-3 py-1.5 border-l-2 border-primary text-primary font-bold font-label-md text-label-md bg-surface-container-low" href="#">Mentor Command Centre</a>
+<a class="px-3 py-1.5 text-on-surface-variant hover:text-primary font-label-md text-label-md" href="#">Student Registry</a>
+<a class="px-3 py-1.5 text-on-surface-variant hover:text-primary font-label-md text-label-md" href="#">Assignment Engine</a>
+</div>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+                    Admin Guide
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">help_center</span>
+                    FAQ
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">build</span>
+                    Troubleshooting
+                </a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 lg:ml-sidebar-width mt-16 px-gutter py-12 flex justify-center">
+<div class="content-well w-full">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mb-6">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Mentor Guide</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Mentor Command Centre</span>
+</nav>
+<!-- Page Header -->
+<h1 class="font-h1 text-h1 text-on-surface mb-6">Mentor Command Centre (Dashboard)</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                    The Mentor Command Centre serves as your central hub for managing student engagement, course progress, and administrative tasks. It provides a real-time overview of your educational ecosystem.
+                </p>
+<!-- Info Callout -->
+<div class="bg-surface-container-low border-l-4 border-primary p-4 flex gap-4 mb-10 rounded-r-lg">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="font-body-md text-body-md text-on-surface">This dashboard is only accessible to users with the Mentor role assigned by an Admin.</p>
+</div>
+<!-- Dashboard Overview -->
+<section class="mb-12" id="dashboard-overview">
+<h2 class="font-h2 text-h2 text-on-surface mb-4">Dashboard overview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        The interface is divided into functional zones that allow for rapid context switching. The top bar contains global search and notification controls, while the primary workspace is dominated by data visualization and student queues.
+                    </p>
+<div class="border-2 border-dashed border-outline-variant rounded-xl aspect-video flex flex-col items-center justify-center bg-surface-bright relative group overflow-hidden">
+<img alt="Dashboard Preview" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale transition-transform duration-500 group-hover:scale-105" data-alt="A high-fidelity software dashboard interface mockup displayed on a sleek monitor. The UI features professional indigo and clean white tones with complex data visualizations including bar charts, line graphs, and student progress meters. Soft studio lighting creates a professional tech atmosphere with a minimalist, corporate minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIn6oA8a791IkWsOthWT1g3M0w49kHjONpARdLOkWyplNJIzQeCywuatJUaqCgN7OIIk2O-bSZB_7vIrnjDVsstPoO5Q0CMTyJPLOy3obeAZrgyt56iG_Y7YO2ZMO2xxzigvfkzkWYI_UypGXmdPN79JfQkVz9_DMzxovhNgikBh8BynnBp4XqFT_lTL-BFUIxJ5W3pMZ3n5fQO7QNJctgfBLFgNuqOtXtx6Vp-TxaiC97xARcLrblTIZA18qq5EnQ1jFdjQw6neGn"/>
+<div class="z-10 text-center">
+<span class="material-symbols-outlined text-[48px] text-outline mb-2">image</span>
+<p class="font-code text-code text-on-surface-variant">mentor-dashboard-overview.png</p>
+</div>
+</div>
+</section>
+<!-- Key Metrics Panel -->
+<section class="mb-12" id="key-metrics-panel">
+<h2 class="font-h2 text-h2 text-on-surface mb-4">Key metrics panel</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Metrics are tracked asynchronously to ensure UI responsiveness. Key performance indicators are aggregated at the mentor level.
+                    </p>
+<div class="overflow-x-auto border border-outline-variant rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-4 py-3 font-label-md text-label-md text-on-surface">Feature</th>
+<th class="px-4 py-3 font-label-md text-label-md text-on-surface">Description</th>
+<th class="px-4 py-3 font-label-md text-label-md text-on-surface">Refresh Rate</th>
+<th class="px-4 py-3 font-label-md text-label-md text-on-surface">Visibility</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface-variant divide-y divide-outline-variant">
+<tr>
+<td class="px-4 py-3 font-medium text-on-surface">Active Students</td>
+<td class="px-4 py-3">Total enrolled and online</td>
+<td class="px-4 py-3">5 mins</td>
+<td class="px-4 py-3"><span class="px-2 py-0.5 bg-surface-container rounded text-on-surface-variant border border-outline-variant">Public</span></td>
+</tr>
+<tr>
+<td class="px-4 py-3 font-medium text-on-surface">Courses Assigned</td>
+<td class="px-4 py-3">List of active curriculums</td>
+<td class="px-4 py-3">Daily</td>
+<td class="px-4 py-3"><span class="px-2 py-0.5 bg-surface-container-high rounded text-primary border border-primary/20 font-medium">Private</span></td>
+</tr>
+<tr>
+<td class="px-4 py-3 font-medium text-on-surface">Pending Submissions</td>
+<td class="px-4 py-3">Assignments awaiting grading</td>
+<td class="px-4 py-3 font-medium text-error">Real-time</td>
+<td class="px-4 py-3"><span class="px-2 py-0.5 bg-surface-container-high rounded text-primary border border-primary/20 font-medium">Private</span></td>
+</tr>
+<tr>
+<td class="px-4 py-3 font-medium text-on-surface">Sessions This Week</td>
+<td class="px-4 py-3">Live classroom count</td>
+<td class="px-4 py-3">1 hour</td>
+<td class="px-4 py-3"><span class="px-2 py-0.5 bg-surface-container rounded text-on-surface-variant border border-outline-variant">Public</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Quick Action Buttons -->
+<section class="mb-12" id="quick-action-buttons">
+<h2 class="font-h2 text-h2 text-on-surface mb-6">Quick action buttons</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+<button class="flex flex-col items-start p-4 border border-outline-variant rounded-xl bg-surface hover:bg-surface-container-low hover:border-primary transition-all text-left group">
+<span class="material-symbols-outlined text-primary mb-3 text-[28px]">group</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">View Students</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Manage enrollments</span>
+</button>
+<button class="flex flex-col items-start p-4 border border-outline-variant rounded-xl bg-surface hover:bg-surface-container-low hover:border-primary transition-all text-left group">
+<span class="material-symbols-outlined text-primary mb-3 text-[28px]">add</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Create Assignment</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Build new tasks</span>
+</button>
+<button class="flex flex-col items-start p-4 border border-outline-variant rounded-xl bg-surface hover:bg-surface-container-low hover:border-primary transition-all text-left group">
+<span class="material-symbols-outlined text-primary mb-3 text-[28px]">videocam</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Start Live Class</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Open the virtual room</span>
+</button>
+<button class="flex flex-col items-start p-4 border border-outline-variant rounded-xl bg-surface hover:bg-surface-container-low hover:border-primary transition-all text-left group">
+<span class="material-symbols-outlined text-primary mb-3 text-[28px]">grading</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Grade Submissions</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Review student work</span>
+</button>
+<button class="flex flex-col items-start p-4 border border-outline-variant rounded-xl bg-surface hover:bg-surface-container-low hover:border-primary transition-all text-left group">
+<span class="material-symbols-outlined text-primary mb-3 text-[28px]">campaign</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Post Announcement</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Broadcast to class</span>
+</button>
+<button class="flex flex-col items-start p-4 border border-outline-variant rounded-xl bg-surface hover:bg-surface-container-low hover:border-primary transition-all text-left group">
+<span class="material-symbols-outlined text-primary mb-3 text-[28px]">analytics</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Generate Report</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Export performance</span>
+</button>
+</div>
+</section>
+<!-- Recent Activity Feed -->
+<section class="mb-12" id="recent-activity-feed">
+<h2 class="font-h2 text-h2 text-on-surface mb-6">Recent activity feed</h2>
+<div class="relative pl-8 border-l border-outline-variant space-y-8 py-2">
+<div class="relative">
+<div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-surface"></div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Graded assignment for Intro to JS</p>
+<p class="text-on-surface-variant text-body-sm">Alex Johnson • 15 minutes ago</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-outline border-4 border-surface"></div>
+<p class="font-label-md text-label-md text-on-surface">Started live session: Web Arch</p>
+<p class="text-on-surface-variant text-body-sm">32 participants • 2 hours ago</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-outline border-4 border-surface"></div>
+<p class="font-label-md text-label-md text-on-surface">Updated Course Syllabus</p>
+<p class="text-on-surface-variant text-body-sm">Data Science 101 • 5 hours ago</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-outline border-4 border-surface"></div>
+<p class="font-label-md text-label-md text-on-surface">New Support Ticket Received</p>
+<p class="text-on-surface-variant text-body-sm">Technical Issue • Yesterday</p>
+</div>
+</div>
+</section>
+<!-- Warning Callout -->
+<div class="bg-amber-50 border-l-4 border-amber-500 p-4 flex gap-4 mb-12 rounded-r-lg">
+<span class="material-symbols-outlined text-amber-600" style="font-variation-settings: 'FILL' 1;">warning</span>
+<p class="font-body-md text-body-md text-amber-900 leading-tight">
+<strong>Note:</strong> Dashboard data is cached every 15 minutes. For real-time data, use the <a class="underline hover:text-amber-700" href="#">Analytics module</a>.
+                    </p>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex flex-col sm:flex-row justify-between gap-4 py-8 border-t border-outline-variant">
+<a class="flex-1 p-4 border border-outline-variant rounded-lg hover:border-primary transition-colors group" href="#">
+<span class="text-on-surface-variant text-label-sm block mb-1">Previous</span>
+<div class="flex items-center gap-2 text-on-surface font-bold">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+                            Login &amp; Access Control
+                        </div>
+</a>
+<a class="flex-1 p-4 border border-outline-variant rounded-lg hover:border-primary transition-colors text-right group" href="#">
+<span class="text-on-surface-variant text-label-sm block mb-1">Next</span>
+<div class="flex items-center justify-end gap-2 text-on-surface font-bold">
+                            Student Registry &amp; Management
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</main>
+<!-- Right TOC (Sticky) -->
+<aside class="hidden xl:block w-[240px] sticky top-16 h-fit pt-12 px-6">
+<h4 class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest mb-4">On this page</h4>
+<nav class="flex flex-col gap-3 text-body-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors border-l-2 border-transparent pl-3 hover:border-primary" href="#dashboard-overview">Dashboard overview</a>
+<a class="hover:text-primary transition-colors border-l-2 border-transparent pl-3 hover:border-primary" href="#key-metrics-panel">Key metrics panel</a>
+<a class="hover:text-primary transition-colors border-l-2 border-transparent pl-3 hover:border-primary" href="#quick-action-buttons">Quick action buttons</a>
+<a class="hover:text-primary transition-colors border-l-2 border-transparent pl-3 hover:border-primary" href="#recent-activity-feed">Recent activity feed</a>
+</nav>
+</aside>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="py-12 px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-center md:text-left">
+<span class="font-h3 text-h3 font-bold text-on-surface">LearnOS</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                    © 2024 LearnOS Foundation. Documentation licensed under CC BY 4.0.
+                </p>
+</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary font-body-sm text-body-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary font-body-sm text-body-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary font-body-sm text-body-sm" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary font-body-sm text-body-sm" href="#">Discord</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll spy or active link handling if needed
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

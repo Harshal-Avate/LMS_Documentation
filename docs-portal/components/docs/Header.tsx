@@ -10,11 +10,11 @@ import { MobileSidebar } from "./MobileSidebar";
 export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-14 items-center gap-4 px-4 lg:px-6">
+      <div className="flex h-14 items-center gap-2 sm:gap-4 px-4 lg:px-6">
         {/* Mobile Sidebar Trigger */}
         <MobileSidebar />
 
-        <Link href="/" className="flex items-center shrink-0">
+        <Link href="/" className="flex items-center shrink min-w-0">
           <Image 
             src="/logo/simplespherelearning.png" 
             alt="SimpleSphere Learning" 

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 18px;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#0b1c30",
+                        "surface-tint": "#4d44e3",
+                        "secondary": "#565e74",
+                        "on-tertiary-container": "#dadcde",
+                        "surface-container-high": "#dce9ff",
+                        "on-background": "#0b1c30",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-primary": "#c3c0ff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "primary-fixed": "#e2dfff",
+                        "outline": "#777587",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "secondary-container": "#dae2fd",
+                        "surface-variant": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-bright": "#f8f9ff",
+                        "surface-dim": "#cbdbf5",
+                        "tertiary-container": "#5e6163",
+                        "surface": "#f8f9ff",
+                        "on-secondary-container": "#5c647a",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#4f46e5",
+                        "tertiary": "#46494b",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-container": "#e5eeff",
+                        "on-surface-variant": "#464555",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dae2fd",
+                        "outline-variant": "#c7c4d8",
+                        "on-primary-fixed": "#0f0069",
+                        "primary": "#3525cd",
+                        "tertiary-fixed-dim": "#c4c7c9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "sidebar-width": "280px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "code": ["JetBrains Mono"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "code": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h1": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "h1-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center h-16 px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-h2 text-h2 font-bold text-primary dark:text-primary-fixed cursor-pointer">LearnOS Docs</span>
+<nav class="hidden md:flex items-center gap-6 font-body-md text-body-md">
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Guides</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors duration-200 cursor-pointer" href="#">API</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Changelog</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Community</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-low border border-outline-variant rounded px-3 py-1.5 w-64">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<span class="text-body-sm text-on-surface-variant ml-2">Search documentation...</span>
+<span class="ml-auto text-[10px] border border-outline-variant px-1.5 rounded bg-surface">K</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70" data-icon="dark_mode">dark_mode</span>
+<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70" data-icon="settings">settings</span>
+</div>
+</div>
+</div>
+</header>
+<div class="max-w-container-max mx-auto flex">
+<!-- SideNavBar -->
+<aside class="hidden md:block fixed left-0 top-16 h-[calc(100vh-64px)] w-sidebar-width bg-surface dark:bg-surface-container-low border-r border-outline-variant dark:border-outline overflow-y-auto px-4 pb-12">
+<div class="flex flex-col pt-8">
+<div class="px-4 mb-6">
+<h3 class="font-h3 text-h3 font-semibold text-on-surface">Documentation</h3>
+<p class="text-label-sm text-secondary">v2.4.0</p>
+</div>
+<!-- Nav Section: Getting Started -->
+<div class="mb-8">
+<p class="px-4 text-label-sm uppercase tracking-wider text-secondary mb-2 font-bold">Getting Started</p>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Introduction</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Login</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Dashboard Overview</a>
+</nav>
+</div>
+<!-- Nav Section: Student Guide (Active) -->
+<div class="mb-8">
+<p class="px-4 text-label-sm uppercase tracking-wider text-secondary mb-2 font-bold">Student Guide</p>
+<nav class="space-y-0.5">
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Login</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Student Dashboard</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Announcements</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md bg-primary-container/10 text-primary font-bold border-l-4 border-primary rounded-r-lg" href="#">My Courses</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Attendance</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Assessments</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">My Analytics</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Code Arena</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">AI Study Mentor</a>
+</nav>
+</div>
+<!-- Nav Section: Mentor Guide -->
+<div class="mb-8">
+<p class="px-4 text-label-sm uppercase tracking-wider text-secondary mb-2 font-bold">Mentor Guide</p>
+<nav class="space-y-0.5">
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Login &amp; Access Control</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Mentor Command Centre</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Curriculum Builder</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">SLA Registry</a>
+</nav>
+</div>
+<!-- Nav Section: Admin Guide -->
+<div class="mb-8">
+<p class="px-4 text-label-sm uppercase tracking-wider text-secondary mb-2 font-bold">Admin Guide</p>
+<nav class="space-y-0.5">
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Login</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Admin Dashboard</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">User Management</a>
+<a class="flex items-center gap-3 px-4 py-2 text-label-md font-label-md text-secondary hover:bg-surface-container transition-all duration-150 rounded-lg" href="#">Analytics &amp; Reports</a>
+</nav>
+</div>
+<div class="mt-4 px-4 pb-8">
+<button class="w-full bg-primary text-on-primary py-2 px-4 rounded-lg font-label-md hover:opacity-90 transition-opacity">Submit Feedback</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-sidebar-width pt-24 px-6 md:px-margin-desktop">
+<div class="max-w-[740px] mx-auto pb-24">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-label-sm text-secondary mb-8">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined !text-[14px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Student Guide</a>
+<span class="material-symbols-outlined !text-[14px]">chevron_right</span>
+<span class="text-on-surface">My Courses</span>
+</nav>
+<!-- Page Title -->
+<h1 class="font-h1 text-h1 text-on-surface mb-6">My Courses</h1>
+<!-- Intro Text -->
+<p class="font-body-lg text-body-lg text-secondary mb-8 leading-relaxed">
+                    The "My Courses" section is your central hub for academic progression within LearnOS. Here, you can track your current enrollment status, monitor individual module progress, and access detailed curriculum resources for each of your active learning paths.
+                </p>
+<!-- Blue Info Callout -->
+<div class="bg-primary-container/10 border-l-4 border-primary p-6 rounded-r-lg mb-10 flex gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">info</span>
+<div>
+<p class="font-label-md text-on-surface font-bold mb-1">Important Update</p>
+<p class="text-body-sm text-secondary leading-normal">Course progression is now calculated in real-time based on both attendance and assessment completion. Ensure you synchronize your offline project commits to see the latest data.</p>
+</div>
+</div>
+<!-- Subheading H2 -->
+<h2 class="font-h2 text-h2 text-on-surface mb-4 mt-12 scroll-mt-24" id="overview">Overview of Course Structure</h2>
+<p class="text-body-md text-secondary mb-6">
+                    Each course in the LearnOS ecosystem is divided into specific tracks. Your dashboard provides a high-level visualization of where you stand in each track. The following table summarizes the primary data points available in your current semester:
+                </p>
+<!-- Data Table -->
+<div class="overflow-x-auto border border-outline-variant rounded-lg mb-10">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="p-4 font-label-md text-on-surface">Course Name</th>
+<th class="p-4 font-label-md text-on-surface">Instructor</th>
+<th class="p-4 font-label-md text-on-surface">Progress</th>
+<th class="p-4 font-label-md text-on-surface">SLA Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-4 font-label-md text-primary">Advanced Fullstack Dev</td>
+<td class="p-4 text-body-sm text-secondary">Sarah Connor</td>
+<td class="p-4">
+<div class="w-full bg-outline-variant h-1.5 rounded-full">
+<div class="bg-primary h-1.5 rounded-full" style="width: 75%"></div>
+</div>
+<span class="text-[10px] text-secondary mt-1 block">75% Complete</span>
+</td>
+<td class="p-4">
+<span class="bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-full text-[10px] font-bold">HEALTHY</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-4 font-label-md text-primary">Cloud Infrastructure</td>
+<td class="p-4 text-body-sm text-secondary">Miles Dyson</td>
+<td class="p-4">
+<div class="w-full bg-outline-variant h-1.5 rounded-full">
+<div class="bg-primary h-1.5 rounded-full" style="width: 42%"></div>
+</div>
+<span class="text-[10px] text-secondary mt-1 block">42% Complete</span>
+</td>
+<td class="p-4">
+<span class="bg-surface-container-high text-secondary px-2 py-0.5 rounded-full text-[10px] font-bold">WARNING</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-4 font-label-md text-primary">AI &amp; Ethics</td>
+<td class="p-4 text-body-sm text-secondary">A. Silberman</td>
+<td class="p-4">
+<div class="w-full bg-outline-variant h-1.5 rounded-full">
+<div class="bg-primary h-1.5 rounded-full" style="width: 90%"></div>
+</div>
+<span class="text-[10px] text-secondary mt-1 block">90% Complete</span>
+</td>
+<td class="p-4">
+<span class="bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-full text-[10px] font-bold">HEALTHY</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Subheading H3 -->
+<h3 class="font-h3 text-h3 text-on-surface mb-4 mt-10 scroll-mt-24" id="api-integration">API Integration for Data Sync</h3>
+<p class="text-body-md text-secondary mb-6">
+                    If you are building custom tooling or using the LearnOS CLI, you can programmatically fetch your course status using our secure API endpoint. Use the following payload structure for authentication:
+                </p>
+<!-- Code Block -->
+<div class="bg-[#0b1c30] rounded-lg p-5 mb-10 overflow-hidden relative group">
+<div class="flex justify-between items-center mb-4">
+<span class="text-[11px] text-secondary font-code uppercase tracking-widest">Request Payload - JSON</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 text-secondary hover:text-white text-[12px]">
+<span class="material-symbols-outlined !text-[14px]">content_copy</span>
+                            Copy
+                        </button>
+</div>
+<pre class="font-code text-code text-[#dadcde] leading-relaxed"><code>{
+  "endpoint": "/api/v1/student/courses",
+  "method": "GET",
+  "headers": {
+    "Authorization": "Bearer &lt;TOKEN&gt;",
+    "X-LearnOS-Version": "2.4.0"
+  },
+  "params": {
+    "include_analytics": true,
+    "filter": "active"
+  }
+}</code></pre>
+</div>
+<!-- Subheading H2 -->
+<h2 class="font-h2 text-h2 text-on-surface mb-4 mt-12 scroll-mt-24" id="tracking-modules">Tracking Course Modules</h2>
+<p class="text-body-md text-secondary mb-10 leading-relaxed">
+                    Under each course header, you will find a list of modules. These are the building blocks of your curriculum. Clicking into a module will reveal the required reading, associated labs, and assessment deadlines. Remember that some modules require prerequisites to be completed before unlocking.
+                </p>
+<!-- Pagination Buttons -->
+<div class="mt-16 pt-8 border-t border-outline-variant flex justify-between gap-4">
+<a class="flex-1 group flex flex-col items-start p-4 border border-outline-variant rounded-lg hover:border-primary transition-colors" href="#">
+<span class="text-secondary text-[11px] font-label-md uppercase mb-1">Previous</span>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">arrow_back</span>
+                            Announcements
+                        </div>
+</a>
+<a class="flex-1 group flex flex-col items-end p-4 border border-outline-variant rounded-lg hover:border-primary transition-colors text-right" href="#">
+<span class="text-secondary text-[11px] font-label-md uppercase mb-1">Next</span>
+<div class="flex items-center gap-2 text-primary font-bold">
+                            Attendance
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</main>
+<!-- Right TOC Sidebar -->
+<aside class="hidden lg:block fixed right-0 top-16 h-[calc(100vh-64px)] w-[240px] px-8 pt-12 overflow-y-auto">
+<p class="text-label-sm font-bold uppercase tracking-wider text-on-surface mb-4">On this page</p>
+<nav class="flex flex-col gap-3">
+<a class="text-label-md text-secondary hover:text-primary transition-colors border-l-2 border-transparent pl-3 py-0.5 hover:border-outline-variant" href="#overview">Overview of Course Structure</a>
+<a class="text-label-md text-secondary hover:text-primary transition-colors border-l-2 border-transparent pl-3 py-0.5 hover:border-outline-variant" href="#api-integration">API Integration</a>
+<a class="text-label-md text-secondary hover:text-primary transition-colors border-l-2 border-transparent pl-3 py-0.5 hover:border-outline-variant" href="#tracking-modules">Tracking Course Modules</a>
+</nav>
+<div class="mt-12 pt-8 border-t border-outline-variant">
+<div class="bg-surface-container rounded-lg p-4">
+<p class="text-label-sm font-bold mb-2">Need help?</p>
+<p class="text-body-sm text-secondary mb-3">Join our developer Discord for instant support.</p>
+<a class="text-primary font-label-md flex items-center gap-1 hover:underline" href="#">
+                        Join Discord
+                        <span class="material-symbols-outlined !text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+</aside>
+</div>
+<!-- Scroll to Top (Micro-interaction) -->
+<button class="fixed bottom-8 right-8 bg-surface border border-outline-variant p-3 rounded-full hover:bg-surface-container transition-colors md:hidden" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+        // Simple active link tracker for TOC
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('h2, h3');
+            const navLinks = document.querySelectorAll('aside.right-0 nav a');
+            
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary', 'border-primary', 'font-bold');
+                link.classList.add('text-secondary', 'border-transparent');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('text-primary', 'border-primary', 'font-bold');
+                    link.classList.remove('text-secondary', 'border-transparent');
+                }
+            });
+        });
+
+        // Search highlight placeholder
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+                e.preventDefault();
+                alert('Search triggered via CMD/CTRL + K');
+            }
+        });
+    </script>
+</body></html>

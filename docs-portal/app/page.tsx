@@ -223,7 +223,7 @@ export default function HomePage() {
           <div className="absolute -top-20 right-0 w-64 h-64 bg-blue-400/10 dark:bg-blue-400/5 rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 pt-8 pb-16 lg:pt-12 lg:pb-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 pt-6 pb-12 lg:pt-12 lg:pb-20 text-center">
 
           <div className="mb-6 flex flex-col items-center gap-2">
             <BlurText
@@ -241,7 +241,7 @@ export default function HomePage() {
                 { text: "\n" },
                 { text: "Ecosystem", className: "text-slate-900 dark:text-white" }
               ]}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight justify-center max-w-4xl mx-auto leading-[1.1] md:leading-[1.15]"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight justify-center max-w-4xl mx-auto leading-[1.1] md:leading-[1.15]"
               animateBy="words"
               direction="bottom"
               delay={50}

@@ -1,0 +1,155 @@
+{
+  "designSystems": [
+    {
+      "name": "assets/2d445e5b9bed4cb7bc99964f48dae342",
+      "designSystem": {
+        "displayName": "LearnOS Design System",
+        "styleGuidelines": "## Brand & Style\nThe design system is engineered for high-density information environments, specifically tailored for enterprise-grade documentation. The brand personality is professional, authoritative, and developer-centric, prioritizing clarity of thought over decorative flair.\n\nThe visual style is **Corporate / Modern** with a focus on **Minimalism**. It utilizes a \"Flat-Plus\" approach: primarily flat surfaces and high-contrast borders, punctuated by subtle tonal shifts to indicate interactivity. The emotional response should be one of reliability and technical precision, ensuring that users feel the platform is an extension of their local development environment.\n\n## Layout & Spacing\nThe layout follows a **Fixed Grid** philosophy for the main documentation content to maintain optimal line lengths (65-75 characters). \n\n- **Desktop:** A three-column structure: Sticky left sidebar for navigation (280px), centered content well (max 800px), and an optional right-side \"On this page\" table of contents.\n- **Tablet:** The right-side TOC is hidden; margins are reduced to 24px.\n- **Mobile:** Single column fluid layout with a bottom-docked or top-header mobile menu.\n\nSpacing is based on a **4px baseline grid**. Standardized increments (8, 16, 24, 32, 48, 64) are used for all margins and paddings to ensure mathematical harmony across the interface.\n\n## Elevation & Depth\nIn alignment with the enterprise/flat aesthetic, depth is communicated through **Low-contrast outlines** and **Tonal layers** rather than heavy shadows.\n\n- **Level 0 (Base):** White background (#FFFFFF).\n- **Level 1 (Cards/Floating UI):** White background with a 1px border (#E2E8F0) and an extremely subtle, diffused shadow (0px 1px 3px rgba(0,0,0,0.05)).\n- **Level 2 (Active/Hover):** A slight elevation increase using a primary-tinted border or a slightly deeper shadow (0px 4px 6px rgba(0,0,0,0.07)).\n- **Overlays:** Modals and menus use a backdrop blur (8px) with a semi-transparent Slate-900 overlay (opacity 20%) to maintain focus.\n\n## Components\n- **Buttons:** Primary buttons are solid Indigo (#4F46E5) with white text. Secondary buttons use a white fill with a Slate 300 border. Teritary buttons are ghost-style (no border/fill) with Slate 600 text.\n- **Cards:** Clean white backgrounds, 1px Slate 200 border. Content should have 24px internal padding.\n- **Navigation:** Sidebar links use Slate 600 for inactive states and Indigo 600 with a subtle Indigo 50 background tint for active states.\n- **Inputs:** Focused state should use a 2px Indigo 500 ring with 0px offset. Labels are always positioned above the input field in `label-md` style.\n- **Chips/Badges:** Small, high-contrast badges for \"New\" or \"Beta\" tags using Indigo 50 background and Indigo 700 text.\n- **Code Blocks:** Dark-themed blocks (Slate 900) even in light mode to provide a clear visual break from prose, utilizing syntax highlighting that complements the Indigo primary color.\n- **Sticky Header:** A 64px tall blurred header (backdrop-filter: blur(12px)) with a thin bottom border to house search and global versioning.",
+        "theme": {
+          "colorMode": "LIGHT",
+          "font": "INTER",
+          "roundness": "ROUND_FOUR",
+          "customColor": "#4f46e5",
+          "headlineFont": "INTER",
+          "bodyFont": "INTER",
+          "labelFont": "INTER",
+          "namedColors": {
+            "background": "#f8f9ff",
+            "error": "#ba1a1a",
+            "error_container": "#ffdad6",
+            "inverse_on_surface": "#eaf1ff",
+            "inverse_primary": "#c3c0ff",
+            "inverse_surface": "#213145",
+            "on_background": "#0b1c30",
+            "on_error": "#ffffff",
+            "on_error_container": "#93000a",
+            "on_primary": "#ffffff",
+            "on_primary_container": "#dad7ff",
+            "on_primary_fixed": "#0f0069",
+            "on_primary_fixed_variant": "#3323cc",
+            "on_secondary": "#ffffff",
+            "on_secondary_container": "#5c647a",
+            "on_secondary_fixed": "#131b2e",
+            "on_secondary_fixed_variant": "#3f465c",
+            "on_surface": "#0b1c30",
+            "on_surface_variant": "#464555",
+            "on_tertiary": "#ffffff",
+            "on_tertiary_container": "#dadcde",
+            "on_tertiary_fixed": "#191c1e",
+            "on_tertiary_fixed_variant": "#444749",
+            "outline": "#777587",
+            "outline_variant": "#c7c4d8",
+            "primary": "#3525cd",
+            "primary_container": "#4f46e5",
+            "primary_fixed": "#e2dfff",
+            "primary_fixed_dim": "#c3c0ff",
+            "secondary": "#565e74",
+            "secondary_container": "#dae2fd",
+            "secondary_fixed": "#dae2fd",
+            "secondary_fixed_dim": "#bec6e0",
+            "surface": "#f8f9ff",
+            "surface_bright": "#f8f9ff",
+            "surface_container": "#e5eeff",
+            "surface_container_high": "#dce9ff",
+            "surface_container_highest": "#d3e4fe",
+            "surface_container_low": "#eff4ff",
+            "surface_container_lowest": "#ffffff",
+            "surface_dim": "#cbdbf5",
+            "surface_tint": "#4d44e3",
+            "surface_variant": "#d3e4fe",
+            "tertiary": "#46494b",
+            "tertiary_container": "#5e6163",
+            "tertiary_fixed": "#e0e3e5",
+            "tertiary_fixed_dim": "#c4c7c9"
+          },
+          "designMd": "---\nname: LearnOS Design System\ncolors:\n  surface: '#f8f9ff'\n  surface-dim: '#cbdbf5'\n  surface-bright: '#f8f9ff'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#eff4ff'\n  surface-container: '#e5eeff'\n  surface-container-high: '#dce9ff'\n  surface-container-highest: '#d3e4fe'\n  on-surface: '#0b1c30'\n  on-surface-variant: '#464555'\n  inverse-surface: '#213145'\n  inverse-on-surface: '#eaf1ff'\n  outline: '#777587'\n  outline-variant: '#c7c4d8'\n  surface-tint: '#4d44e3'\n  primary: '#3525cd'\n  on-primary: '#ffffff'\n  primary-container: '#4f46e5'\n  on-primary-container: '#dad7ff'\n  inverse-primary: '#c3c0ff'\n  secondary: '#565e74'\n  on-secondary: '#ffffff'\n  secondary-container: '#dae2fd'\n  on-secondary-container: '#5c647a'\n  tertiary: '#46494b'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#5e6163'\n  on-tertiary-container: '#dadcde'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#e2dfff'\n  primary-fixed-dim: '#c3c0ff'\n  on-primary-fixed: '#0f0069'\n  on-primary-fixed-variant: '#3323cc'\n  secondary-fixed: '#dae2fd'\n  secondary-fixed-dim: '#bec6e0'\n  on-secondary-fixed: '#131b2e'\n  on-secondary-fixed-variant: '#3f465c'\n  tertiary-fixed: '#e0e3e5'\n  tertiary-fixed-dim: '#c4c7c9'\n  on-tertiary-fixed: '#191c1e'\n  on-tertiary-fixed-variant: '#444749'\n  background: '#f8f9ff'\n  on-background: '#0b1c30'\n  surface-variant: '#d3e4fe'\ntypography:\n  h1:\n    fontFamily: Inter\n    fontSize: 36px\n    fontWeight: '700'\n    lineHeight: 44px\n    letterSpacing: -0.02em\n  h1-mobile:\n    fontFamily: Inter\n    fontSize: 30px\n    fontWeight: '700'\n    lineHeight: 38px\n    letterSpacing: -0.02em\n  h2:\n    fontFamily: Inter\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n    letterSpacing: -0.01em\n  h3:\n    fontFamily: Inter\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 28px\n    letterSpacing: -0.01em\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-sm:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\n  label-md:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '500'\n    lineHeight: 20px\n  label-sm:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: 16px\n    letterSpacing: 0.05em\n  code:\n    fontFamily: jetbrainsMono\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  unit: 4px\n  container-max: 1280px\n  sidebar-width: 280px\n  gutter: 24px\n  margin-mobile: 16px\n  margin-desktop: 40px\n---\n\n## Brand & Style\nThe design system is engineered for high-density information environments, specifically tailored for enterprise-grade documentation. The brand personality is professional, authoritative, and developer-centric, prioritizing clarity of thought over decorative flair.\n\nThe visual style is **Corporate / Modern** with a focus on **Minimalism**. It utilizes a \"Flat-Plus\" approach: primarily flat surfaces and high-contrast borders, punctuated by subtle tonal shifts to indicate interactivity. The emotional response should be one of reliability and technical precision, ensuring that users feel the platform is an extension of their local development environment.\n\n## Colors\nThe palette is anchored by **Primary Indigo (#4F46E5)**, used strategically for primary actions, active states, and critical wayfinding elements. \n\n- **Surface:** The background is a clean, absolute white (#FFFFFF) to maximize legibility.\n- **Text:** Primary content uses Slate 900 (#0F172A) for high contrast. Secondary information and metadata utilize Slate 500 (#64748B).\n- **Borders:** A consistent use of Slate 200 (#E2E8F0) for structural division and Slate 300 (#CBD5E1) for interactive element boundaries.\n- **Accents:** Success, Warning, and Error states should follow standard accessible tokens (Emerald 600, Amber 600, Rose 600) but remain secondary to the Indigo/Slate core.\n\n## Typography\nThis design system utilizes **Inter** for all UI and prose elements to ensure maximum legibility and a systematic feel. For code blocks and technical snippets, **JetBrains Mono** is employed to maintain developer familiarity.\n\nHeadlines (H1-H3) use tighter letter-spacing and heavier weights to create a strong visual anchor. Body copy is set with generous line-height to facilitate long-form reading. A strict type scale ensures that hierarchy is immediately obvious: H1 for page titles, H2 for major sections, and H3 for sub-points.\n\n## Layout & Spacing\nThe layout follows a **Fixed Grid** philosophy for the main documentation content to maintain optimal line lengths (65-75 characters). \n\n- **Desktop:** A three-column structure: Sticky left sidebar for navigation (280px), centered content well (max 800px), and an optional right-side \"On this page\" table of contents.\n- **Tablet:** The right-side TOC is hidden; margins are reduced to 24px.\n- **Mobile:** Single column fluid layout with a bottom-docked or top-header mobile menu.\n\nSpacing is based on a **4px baseline grid**. Standardized increments (8, 16, 24, 32, 48, 64) are used for all margins and paddings to ensure mathematical harmony across the interface.\n\n## Elevation & Depth\nIn alignment with the enterprise/flat aesthetic, depth is communicated through **Low-contrast outlines** and **Tonal layers** rather than heavy shadows.\n\n- **Level 0 (Base):** White background (#FFFFFF).\n- **Level 1 (Cards/Floating UI):** White background with a 1px border (#E2E8F0) and an extremely subtle, diffused shadow (0px 1px 3px rgba(0,0,0,0.05)).\n- **Level 2 (Active/Hover):** A slight elevation increase using a primary-tinted border or a slightly deeper shadow (0px 4px 6px rgba(0,0,0,0.07)).\n- **Overlays:** Modals and menus use a backdrop blur (8px) with a semi-transparent Slate-900 overlay (opacity 20%) to maintain focus.\n\n## Shapes\nThe shape language is **Soft**, utilizing a 4px (0.25rem) base radius. This provides a modern, approachable feel while maintaining the rigid, professional structure required for technical documentation.\n\n- **Buttons & Inputs:** 6px radius for a balanced, tool-like appearance.\n- **Cards & Large Containers:** 8px (rounded-lg) to distinguish them from smaller UI components.\n- **Search Bars:** Often fully pill-shaped (rounded-full) to indicate a global, persistent utility.\n\n## Components\n- **Buttons:** Primary buttons are solid Indigo (#4F46E5) with white text. Secondary buttons use a white fill with a Slate 300 border. Teritary buttons are ghost-style (no border/fill) with Slate 600 text.\n- **Cards:** Clean white backgrounds, 1px Slate 200 border. Content should have 24px internal padding.\n- **Navigation:** Sidebar links use Slate 600 for inactive states and Indigo 600 with a subtle Indigo 50 background tint for active states.\n- **Inputs:** Focused state should use a 2px Indigo 500 ring with 0px offset. Labels are always positioned above the input field in `label-md` style.\n- **Chips/Badges:** Small, high-contrast badges for \"New\" or \"Beta\" tags using Indigo 50 background and Indigo 700 text.\n- **Code Blocks:** Dark-themed blocks (Slate 900) even in light mode to provide a clear visual break from prose, utilizing syntax highlighting that complements the Indigo primary color.\n- **Sticky Header:** A 64px tall blurred header (backdrop-filter: blur(12px)) with a thin bottom border to house search and global versioning.",
+          "colorVariant": "FIDELITY",
+          "overridePrimaryColor": "#4f46e5",
+          "overrideSecondaryColor": "#0f172a",
+          "overrideTertiaryColor": "#f8fafc",
+          "overrideNeutralColor": "#64748b",
+          "spacingScale": 2,
+          "typography": {
+            "body-lg": {
+              "fontFamily": "Inter",
+              "fontSize": "18px",
+              "fontWeight": "400",
+              "lineHeight": "28px"
+            },
+            "body-md": {
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px"
+            },
+            "body-sm": {
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "lineHeight": "20px"
+            },
+            "code": {
+              "fontFamily": "jetbrainsMono",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "lineHeight": "20px"
+            },
+            "h1": {
+              "fontFamily": "Inter",
+              "fontSize": "36px",
+              "fontWeight": "700",
+              "lineHeight": "44px",
+              "letterSpacing": "-0.02em"
+            },
+            "h1-mobile": {
+              "fontFamily": "Inter",
+              "fontSize": "30px",
+              "fontWeight": "700",
+              "lineHeight": "38px",
+              "letterSpacing": "-0.02em"
+            },
+            "h2": {
+              "fontFamily": "Inter",
+              "fontSize": "24px",
+              "fontWeight": "600",
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em"
+            },
+            "h3": {
+              "fontFamily": "Inter",
+              "fontSize": "20px",
+              "fontWeight": "600",
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em"
+            },
+            "label-md": {
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px"
+            },
+            "label-sm": {
+              "fontFamily": "Inter",
+              "fontSize": "12px",
+              "fontWeight": "600",
+              "lineHeight": "16px",
+              "letterSpacing": "0.05em"
+            }
+          },
+          "spacing": {
+            "container-max": "1280px",
+            "gutter": "24px",
+            "margin-desktop": "40px",
+            "margin-mobile": "16px",
+            "sidebar-width": "280px",
+            "unit": "4px"
+          },
+          "headlineFontFamily": "Inter",
+          "bodyFontFamily": "Inter",
+          "labelFontFamily": "Inter"
+        }
+      },
+      "version": "1"
+    }
+  ]
+}

@@ -36,8 +36,8 @@ export function MobileSidebar() {
             <span className="font-bold text-sm">SimpleSphere Docs</span>
           </SheetTitle>
         </SheetHeader>
-        <div className="overflow-y-auto h-full pb-16" onClick={() => setOpen(false)}>
-          <Sidebar />
+        <div className="overflow-y-auto h-full pb-16">
+          <Sidebar onNavigate={() => setOpen(false)} />
         </div>
       </SheetContent>
     </Sheet>

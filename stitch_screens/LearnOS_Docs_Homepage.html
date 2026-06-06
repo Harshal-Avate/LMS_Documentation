@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnOS Docs - Documentation</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary-container": "#dadcde",
+                    "on-surface-variant": "#464555",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "surface-container": "#e5eeff",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#dad7ff",
+                    "secondary": "#565e74",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#131b2e",
+                    "surface-container-low": "#eff4ff",
+                    "surface": "#f8f9ff",
+                    "surface-container-high": "#dce9ff",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "tertiary-fixed": "#e0e3e5",
+                    "tertiary-container": "#5e6163",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#4f46e5",
+                    "background": "#f8f9ff",
+                    "on-background": "#0b1c30",
+                    "on-secondary-container": "#5c647a",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "tertiary": "#46494b",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#0f0069",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#191c1e",
+                    "secondary-fixed": "#dae2fd",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "on-primary": "#ffffff",
+                    "outline": "#777587",
+                    "surface-variant": "#d3e4fe",
+                    "surface-tint": "#4d44e3",
+                    "inverse-primary": "#c3c0ff",
+                    "on-surface": "#0b1c30",
+                    "secondary-container": "#dae2fd",
+                    "outline-variant": "#c7c4d8",
+                    "primary": "#3525cd",
+                    "primary-fixed": "#e2dfff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "sidebar-width": "280px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "h1-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "code": ["JetBrains Mono"],
+                    "h2": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h1": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h3": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "h1-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "code": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h1": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for sidebar */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar (Fixed) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-h2 text-h2 font-bold text-primary dark:text-primary-fixed-dim" href="#">LearnOS Docs</a>
+<nav class="hidden md:flex gap-6">
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1" href="#">Guides</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">API</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Community</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Changelog</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="bg-surface-container-low border border-outline-variant rounded-lg pl-10 pr-4 py-1.5 text-body-sm focus:ring-2 focus:ring-primary focus:border-transparent transition-all w-64" placeholder="Search docs..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-primary-container/10 text-primary px-2 py-0.5 rounded text-label-sm font-semibold">v2.4.0</span>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:opacity-80 lg:hidden">
+<span class="material-symbols-outlined text-on-surface-variant">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-16 h-[calc(100vh-64px)] w-sidebar-width bg-surface border-r border-outline-variant dark:border-outline p-4 gap-2 overflow-y-auto scrollbar-hide">
+<div class="mb-4 px-2">
+<h3 class="font-h3 text-h3 font-bold text-primary">Documentation</h3>
+<p class="text-on-surface-variant text-label-sm">v2.4.0</p>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-lg font-label-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+            Getting Started
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg font-label-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined">school</span>
+            Student Guide
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg font-label-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined">psychology</span>
+            Mentor Guide
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg font-label-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+            Admin Guide
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg font-label-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined">help_center</span>
+            FAQ
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-lg font-label-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined">build</span>
+            Troubleshooting
+        </a>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-sidebar-width pt-16 min-h-screen">
+<!-- Hero Section -->
+<section class="bg-white border-b border-outline-variant">
+<div class="max-w-[1000px] mx-auto px-gutter py-24 text-center">
+<h1 class="font-h1 text-h1-mobile md:text-h1 text-on-background mb-6">LearnOS Documentation</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                    Complete guides for Students, Mentors, and Admins. Build, manage, and scale your learning ecosystem with precision.
+                </p>
+<div class="relative max-w-xl mx-auto mb-10">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[24px]">search</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent text-body-md transition-all" placeholder="Search for guides, components, or API references..." type="text"/>
+</div>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="inline-flex items-center justify-center px-8 py-3 bg-primary-container text-white font-label-md rounded-lg hover:opacity-90 transition-opacity" href="#">
+                        Get Started <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center px-8 py-3 bg-white border border-outline-variant text-on-surface font-label-md rounded-lg hover:bg-surface-container-low transition-colors" href="#">
+                        View on GitHub
+                    </a>
+</div>
+</div>
+</section>
+<!-- Card Grid Section -->
+<section class="max-w-[1000px] mx-auto px-gutter py-20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- 1. Getting Started -->
+<div class="group bg-white p-8 rounded-xl border border-outline-variant hover:border-primary transition-all hover:shadow-lg flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-3">Getting Started</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                        Everything you need to set up your account. From login and dashboard orientation to your very first steps in the LearnOS ecosystem.
+                    </p>
+<a class="inline-flex items-center text-primary font-label-md hover:underline" href="#">
+                        Read more <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- 2. Student Guide -->
+<div class="group bg-white p-8 rounded-xl border border-outline-variant hover:border-primary transition-all hover:shadow-lg flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-3">Student Guide</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                        Explore your learning journey. Manage courses, attendance, assessments, and certificates while leveraging our integrated AI mentor.
+                    </p>
+<a class="inline-flex items-center text-primary font-label-md hover:underline" href="#">
+                        Read more <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- 3. Mentor Guide -->
+<div class="group bg-white p-8 rounded-xl border border-outline-variant hover:border-primary transition-all hover:shadow-lg flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">psychology</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-3">Mentor Guide</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                        Power user tools for educators. Mastering course management, grading, student performance tracking, and live classroom interactions.
+                    </p>
+<a class="inline-flex items-center text-primary font-label-md hover:underline" href="#">
+                        Read more <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- 4. Admin Guide -->
+<div class="group bg-white p-8 rounded-xl border border-outline-variant hover:border-primary transition-all hover:shadow-lg flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">admin_panel_settings</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-3">Admin Guide</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                        Enterprise administration controls. User management, batch processing, comprehensive reports, and advanced system settings.
+                    </p>
+<a class="inline-flex items-center text-primary font-label-md hover:underline" href="#">
+                        Read more <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- 5. FAQ -->
+<div class="group bg-white p-8 rounded-xl border border-outline-variant hover:border-primary transition-all hover:shadow-lg flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">help_center</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-3">FAQ</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                        A curated knowledge base. Frequently asked questions categorized by role to help you find quick answers to common queries.
+                    </p>
+<a class="inline-flex items-center text-primary font-label-md hover:underline" href="#">
+                        Read more <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- 6. Troubleshooting -->
+<div class="group bg-white p-8 rounded-xl border border-outline-variant hover:border-primary transition-all hover:shadow-lg flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">build</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-3">Troubleshooting</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                        Technical support for edge cases. Diagnose and fix common platform issues with step-by-step resolution paths.
+                    </p>
+<a class="inline-flex items-center text-primary font-label-md hover:underline" href="#">
+                        Read more <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Decorative Image Section -->
+<section class="max-w-[1000px] mx-auto px-gutter mb-20">
+<div class="relative w-full h-[300px] rounded-2xl overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A clean, futuristic server room interior with rows of sleek data towers emitting a soft indigo glow. The environment is impeccably organized, representing data integrity and high-performance computing. Soft, atmospheric lighting highlights the polished reflective floors and minimalist industrial design, creating a sense of professional reliability and technological advancement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgVYf2diq1gWyi-H6RRP2JLh-RYEpHX_WmKtXyBdRzJid6GufzmSHBBxaqAL8hfryqOL3Hmk4bQVILAPNiQ_PS3YXj6Jrs9NUo9YaAFNV595jGDZJODRjWjaF3x_o2O7m7IX-RV5o1HzAspSSRtwmthfaOFVY5yom7MguU_Mow90h92XRxCHDTPghZaWw3bwVZBrGCrwEqPXFa5RRC77eRXxzwBlTj3joIw0ddv8UtZruD8IZRco600yk3dKn8HRUCHPfQG4Ok6Mv0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-10">
+<div class="text-white">
+<h4 class="font-h2 text-h2 mb-2">Build with Confidence</h4>
+<p class="font-body-md opacity-90 max-w-lg">LearnOS is built on top of a highly resilient, enterprise-grade architecture designed for scale.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t border-outline-variant dark:border-outline bg-surface-container-low dark:bg-surface-container-lowest">
+<div class="py-12 px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex flex-col items-center md:items-start">
+<h3 class="font-h3 text-h3 font-bold text-on-surface">LearnOS Docs</h3>
+<p class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed-dim mt-2 text-center md:text-left">
+                        © 2024 LearnOS Foundation. Documentation licensed under CC BY 4.0.
+                    </p>
+</div>
+<div class="flex gap-6">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">GitHub</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Discord</a>
+</div>
+</div>
+</footer>
+</main>
+<script>
+        // Simple micro-interaction for hover states and button scale
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.classList.add('scale-95');
+            });
+            el.addEventListener('mouseup', () => {
+                el.classList.remove('scale-95');
+            });
+            el.addEventListener('mouseleave', () => {
+                el.classList.remove('scale-95');
+            });
+        });
+
+        // Theme Toggle Simulation
+        const themeBtn = document.querySelector('header button span');
+        let isDark = false;
+        themeBtn.parentElement.addEventListener('click', () => {
+            isDark = !isDark;
+            document.documentElement.classList.toggle('dark');
+            themeBtn.innerText = isDark ? 'light_mode' : 'dark_mode';
+        });
+    </script>
+</body></html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#d3e4fe",
+                        "outline": "#777587",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-surface-variant": "#464555",
+                        "on-tertiary-fixed": "#191c1e",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#5c647a",
+                        "inverse-primary": "#c3c0ff",
+                        "primary": "#3525cd",
+                        "on-surface": "#0b1c30",
+                        "primary-fixed": "#e2dfff",
+                        "on-tertiary-container": "#dadcde",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-fixed": "#0f0069",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#e5eeff",
+                        "primary-container": "#4f46e5",
+                        "surface-variant": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "error": "#ba1a1a",
+                        "secondary": "#565e74",
+                        "on-primary-container": "#dad7ff",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#4d44e3",
+                        "surface-dim": "#cbdbf5",
+                        "outline-variant": "#c7c4d8",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#131b2e",
+                        "secondary-container": "#dae2fd",
+                        "tertiary-container": "#5e6163",
+                        "tertiary": "#46494b",
+                        "inverse-surface": "#213145",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-background": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "sidebar-width": "280px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h1-mobile": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "code": ["jetbrainsMono"],
+                        "h3": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h1-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h1": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "code": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h3": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .nav-drawer-transition {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .backdrop-blur-overlay {
+            backdrop-filter: blur(4px);
+            background-color: rgba(11, 28, 48, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-hidden">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant flex justify-between items-center h-16 px-margin-mobile">
+<button class="p-2 hover:bg-surface-container-low transition-colors rounded-lg" id="open-drawer">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</button>
+<h1 class="font-h2 text-h2 font-bold text-primary">LearnOS Docs</h1>
+<button class="p-2 hover:bg-surface-container-low transition-colors rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="dark_mode">dark_mode</span>
+</button>
+</header>
+<!-- Main Content Canvas (Article Preview behind drawer) -->
+<main class="pt-16 px-margin-mobile min-h-screen">
+<article class="py-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-2 py-0.5 rounded bg-primary-container/10 text-primary font-label-sm text-label-sm">v2.4.0</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Student Guide / My Courses</span>
+</div>
+<h2 class="font-h1-mobile text-h1-mobile mb-6">Course Enrollment</h2>
+<div class="space-y-6">
+<div class="p-6 bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm">
+<h3 class="font-h3 text-h3 mb-2">Introduction to LearnOS</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Learn how to navigate your customized educational environment and maximize your technical growth through integrated mentor support.</p>
+</div>
+<div class="p-4 bg-primary-container rounded-xl">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-on-primary" data-icon="info">info</span>
+<div>
+<p class="text-on-primary font-label-md text-label-md font-bold mb-1">New Feature</p>
+<p class="text-on-primary-container font-body-sm text-body-sm">The AI Study Mentor is now available in your sidebar for real-time code reviews.</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<p class="font-body-md text-body-md">To begin your journey, ensure you have completed the initial onboarding profile. This allows our recommendation engine to pair you with the most relevant course modules.</p>
+<div class="aspect-video w-full rounded-xl overflow-hidden bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="A high-angle, professional photograph of a modern workstation featuring a laptop with a complex code editor open. The lighting is soft and natural, emphasizing a clean and focused development environment. The color palette consists of cool blues, crisp whites, and deep indigos, reflecting a minimalist and technologically advanced atmosphere consistent with a high-end documentation platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaChCBTPyhnX1gbodIfnupaYB2uTWDCBzuUCtiMOISM8WpjUN9dlGmWD423U6xz5xWbU4EkYKTVb8ZR_l3IsH-cmAcvs0oxZYEr4v5YsaeCtt7bGr_uHA5UJW01QoB5dosWFqtO6aVDhCtdOLYqhSKp1u87G66LwrxXRei7j_J5VtqjMDF_uQ199SVLPtttlR1pK_SFtxrEbeK-LDLCLyrOumQbjaJhNHu7EDjIsbVr2Iui9T7pYA3hLy0x10RKmaDpb91DmDrydWU"/>
+</div>
+</div>
+</div>
+</article>
+</main>
+<!-- Navigation Drawer Overlay -->
+<div class="fixed inset-0 z-[60] backdrop-blur-overlay opacity-100 transition-opacity duration-300" id="drawer-backdrop">
+<!-- Drawer Container -->
+<div class="nav-drawer-transition fixed left-0 top-0 h-full w-[85%] bg-surface border-r border-outline-variant shadow-2xl flex flex-col translate-x-0" id="drawer-content">
+<!-- Drawer Header -->
+<div class="p-6 space-y-6 border-b border-outline-variant">
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-h3 text-h3 font-bold text-primary">Documentation</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">v2.4.0</span>
+</div>
+<button class="p-2 hover:bg-surface-container-high transition-colors rounded-lg" id="close-drawer">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Search Input -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Search docs..." type="text"/>
+</div>
+</div>
+<!-- Drawer Menu Scroll Area -->
+<nav class="flex-1 overflow-y-auto p-4 space-y-2">
+<!-- Collapsed Section -->
+<div class="group">
+<button class="w-full flex items-center justify-between p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<span class="font-label-md text-label-md">Getting Started</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Expanded Section: Student Guide -->
+<div class="space-y-1">
+<button class="w-full flex items-center justify-between p-3 rounded-lg text-primary bg-primary-container/10 font-bold transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-md text-label-md">Student Guide</span>
+</div>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+<!-- Sub-links -->
+<div class="pl-11 pr-3 space-y-1">
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Login</a>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Student Dashboard (Overview)</a>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Announcements</a>
+<!-- Active State -->
+<a class="flex items-center justify-between py-2 text-primary font-bold transition-colors font-body-sm text-body-sm" href="#">
+                            My Courses
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</a>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Attendance</a>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Assessments</a>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">My Analytics</a>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">My Documents</a>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Certificates</a>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Code Arena</a>
+<div class="flex items-center gap-2 py-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">AI Study Mentor</a>
+<span class="px-1.5 py-0.5 rounded bg-primary text-on-primary text-[10px] uppercase font-bold tracking-wider">Beta</span>
+</div>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Chats</a>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Projects</a>
+<div class="h-px bg-outline-variant my-2"></div>
+<a class="block py-2 text-on-surface-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Preferences / Settings</a>
+<a class="flex items-center gap-2 py-2 text-error hover:opacity-80 transition-opacity font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+                            Logout
+                        </a>
+</div>
+</div>
+<!-- More Collapsed Sections -->
+<button class="w-full flex items-center justify-between p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-md text-label-md">Mentor Guide</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-label-md text-label-md">Admin Guide</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+<span class="font-label-md text-label-md">FAQ</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+<span class="font-label-md text-label-md">Troubleshooting</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+</nav>
+<!-- Drawer Footer -->
+<div class="p-4 bg-surface-container-low border-t border-outline-variant">
+<p class="text-[10px] text-on-surface-variant text-center opacity-70">
+                    © 2024 LearnOS Foundation. <br/>Documentation licensed under CC BY 4.0.
+                </p>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (Optional Contextual UI) -->
+<button class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-primary-container text-on-primary-container shadow-lg flex items-center justify-center active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</button>
+<script>
+        const openBtn = document.getElementById('open-drawer');
+        const closeBtn = document.getElementById('close-drawer');
+        const backdrop = document.getElementById('drawer-backdrop');
+        const drawerContent = document.getElementById('drawer-content');
+
+        const toggleDrawer = (isOpen) => {
+            if (isOpen) {
+                backdrop.classList.remove('opacity-0', 'pointer-events-none');
+                backdrop.classList.add('opacity-100');
+                drawerContent.classList.remove('-translate-x-full');
+                drawerContent.classList.add('translate-x-0');
+                document.body.classList.add('overflow-hidden');
+            } else {
+                backdrop.classList.add('opacity-0', 'pointer-events-none');
+                backdrop.classList.remove('opacity-100');
+                drawerContent.classList.add('-translate-x-full');
+                drawerContent.classList.remove('translate-x-0');
+                document.body.classList.remove('overflow-hidden');
+            }
+        };
+
+        openBtn.addEventListener('click', () => toggleDrawer(true));
+        closeBtn.addEventListener('click', () => toggleDrawer(false));
+        backdrop.addEventListener('click', (e) => {
+            if (e.target === backdrop) toggleDrawer(false);
+        });
+
+        // Initialize state as per prompt requirements (opened drawer)
+        // No changes needed, HTML starts with visible classes.
+    </script>
+</body></html>

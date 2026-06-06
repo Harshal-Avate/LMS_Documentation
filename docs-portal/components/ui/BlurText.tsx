@@ -56,7 +56,7 @@ const BlurText = ({
   }, [text, animateBy]);
 
   const [inView, setInView] = useState(false);
-  const ref = useRef<HTMLParagraphElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -99,7 +99,7 @@ const BlurText = ({
   const times = Array.from({ length: stepCount }, (_, i) => (stepCount === 1 ? 0 : i / (stepCount - 1)));
 
   return (
-    <p ref={ref} className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <div ref={ref} className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
 
@@ -128,7 +128,7 @@ const BlurText = ({
           </motion.span>
         );
       })}
-    </p>
+    </div>
   );
 };
 

@@ -33,9 +33,10 @@ const sectionColors: Record<string, string> = {
 
 interface SidebarProps {
   className?: string;
+  onNavigate?: () => void;
 }
 
-export function Sidebar({ className }: SidebarProps) {
+export function Sidebar({ className, onNavigate }: SidebarProps) {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
@@ -122,6 +123,7 @@ export function Sidebar({ className }: SidebarProps) {
                             <li key={sub.href}>
                                 <Link
                                   href={sub.href!}
+                                  onClick={onNavigate}
                                   className={cn(
                                   "flex items-center gap-2 pl-9 pr-3 py-1.5 rounded-md text-sm transition-colors",
                                   isSubActive
@@ -143,6 +145,7 @@ export function Sidebar({ className }: SidebarProps) {
                   <li key={item.href}>
                     <Link
                       href={item.href!}
+                      onClick={onNavigate}
                       className={cn(
                         "flex items-center pl-9 pr-3 py-1.5 rounded-md text-sm transition-colors",
                         isActive

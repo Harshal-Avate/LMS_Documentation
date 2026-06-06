@@ -24,7 +24,7 @@ export default function DocsLayout({ children }: { children: ReactNode }) {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 min-w-0 py-8 lg:py-10 px-4 md:px-8 lg:pl-12 lg:pr-8 xl:pr-0">
+        <main className="flex-1 min-w-0 py-8 lg:py-10 lg:pl-12 lg:pr-8 xl:pr-0">
           <DocLayout>{children}</DocLayout>
         </main>
       </div>
